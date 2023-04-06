@@ -1,0 +1,177 @@
+.AddInfo{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100vw;
+  background-color: #f2f2f2;
+
+}
+
+select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1.4em;
+    font-weight: 300;
+    background-color: #fff;
+    color: #444;
+    margin: 8px 0;
+    width: 50%;
+    box-sizing: border-box;
+  }
+  
+  select:focus {
+    outline: none;
+    border: 1px solid #888;
+  }
+  
+ h2{
+    font-size: 1.3em;
+    font-weight: 300;
+    color: #444;
+    box-sizing: border-box;
+  }
+  
+  h2:focus {
+    outline: none;
+    border: 1px solid #888;
+  }
+  
+  input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 4em;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #444;
+    margin: 8px 0;
+    width: 100%;
+    box-sizing: border-box;
+    
+  }
+  
+  input:focus {
+    outline: none;
+    border: 1px solid #888;
+  }
+  
+  .container {
+    padding: 16px;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .company-details{
+    padding: 16px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    margin: 10px;
+    width: 50%;
+  }
+
+  .company-details input{
+    border: 1px solid #3f3f3f;
+  }
+button:focus{
+  outline: none;
+  border: 1px solid #888;
+}
+
+  button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+  }
+  
+  button:hover {
+    background-color: #45a049;
+}
+
+/* when the button is clicked */
+button:active {
+  background-color: #45a049;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.verification{
+  padding: 16px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin: 10px;
+  width: 100%;
+
+}
+
+.verification h2{
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #444;
+  box-sizing: border-box;
+}
+
+.verification h2 span{
+  font-size: 1.3em;
+  font-weight: 300;
+  color: #444;
+  box-sizing: border-box;
+}
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .company-details{
+      width: 100%;
+    }
+
+    .verification{
+      width: 100%;
+    }
+
+    .AddInfo{
+      width: 100%;
+    }
+
+    .container{
+      width: 100%;
+    }
+
+    .row{
+      width: 100%;
+    }
+
+    .col-25{
+      width: 100%;
+    }
+    
+ }
+
+
