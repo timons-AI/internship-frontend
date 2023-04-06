@@ -30,7 +30,7 @@ const AddInfo = () => {
   useEffect(() => {
     const fetchRegions = async () => {
       try {
-        const response = await fetch('http://localhost:3000/regions');
+        const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/regions');
         const data = await response.json();
         setRegions(data.regions);
       } catch (error) {
@@ -42,7 +42,7 @@ const AddInfo = () => {
 
     const fetchProfessions = async () => {
       try {
-        const response = await fetch('http://localhost:3000/professions');
+        const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/professions');
         const data = await response.json();
         setProfessions(data.professions);
         console.log(data.professions)
@@ -68,7 +68,7 @@ const AddInfo = () => {
   const handleSubmit = async () => {
     try{
     const token = await getAccessTokenSilently();
-    const response = await fetch('http://localhost:3000/setAll', {
+    const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/setAll', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
