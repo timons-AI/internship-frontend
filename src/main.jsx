@@ -7,8 +7,6 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-
     <Auth0Provider
     domain="dev-vuo71mvzxkidycrm.us.auth0.com"
     clientId="5YDAwVytnMtuTWdEgYM2GgE6UoHfa0Ei"
@@ -21,6 +19,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Router>
     <App />
     </Router>
-  </Auth0Provider>
-  </React.StrictMode>,
+  </Auth0Provider>,
 )
