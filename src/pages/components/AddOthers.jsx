@@ -13,7 +13,7 @@ const AddOthers = () => {
   const handleSubmitRegions = async () => {
     try{
     const token = await getAccessTokenSilently();
-    const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/regions', {
+    const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/regions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const AddOthers = () => {
   const handleSubmitProfessions = async () => {
     try{
     const token = await getAccessTokenSilently();
-    const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/professions', {
+    const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/professions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

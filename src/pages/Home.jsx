@@ -56,7 +56,7 @@ function Home() {
       searchParams += `profession=${searchCriteria.profession}&`;
     }
     try {
-      const response = await fetch(`https://intern-app-u7zql.ondigitalocean.app/setAll?${searchParams}`);
+      const response = await fetch(`https://intern-app-u7zql.ondigitalocean.app/api/setAll?${searchParams}`);
       const data = await response.json();
       setSearchResults(data.companies);
       // clear searchCriteria
@@ -74,7 +74,7 @@ function Home() {
   useEffect(() => {
     const fetchRegions = async () => {
       try {
-        const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/regions');
+        const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/regions');
         const data = await response.json();
         setRegions(data.regions);
       } catch (error) {
@@ -86,7 +86,7 @@ function Home() {
 
     const fetchProfessions = async () => {
       try {
-        const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/professions');
+        const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/professions');
         const data = await response.json();
         setProfessions(data.professions);
         console.log(data.professions)
