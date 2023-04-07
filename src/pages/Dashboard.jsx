@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react';
 import Companies from '../components/Companies';
 import RaP from '../components/RaP';
-
+import EditCompanies from '../components/EditCompanies';
 const Dashboard = () => {
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
   
@@ -16,6 +16,7 @@ const Dashboard = () => {
             <>
               <h1 className=' text-2xl font-bold text-center'>Admin Dashboard</h1>       
               <Companies />
+              <EditCompanies />
               <RaP />   
             </>
         
