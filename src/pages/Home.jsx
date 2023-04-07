@@ -65,12 +65,12 @@ const Home = () => {
   return (
     <div>
       <section className=' flex flex-col justify-center items-center p-2'>
-        <h1 className=' text-2xl font-bold text-center'>Find an internship</h1>
+        <h1 className=' text-2xl font-bold text-center '>Find an internship</h1>
         <div className=' flex flex-col justify-center items-center p-2 bg-slate-100 w-full rounded-md'>
           <div className=' flex flex-col justify-center items-center p-2 w-full m-2 '>
             <label className=' text-xl font-bold text-center'>Region</label>
             <select
-              className=' ease-out duration-300 bg-slate-600 p-2 font-bold text-white w-9/12 rounded-md'
+              className=' ease-out duration-300 bg-slate-600 p-2 font-bold text-white w-9/12 rounded-md focus:bg-slate-300'
               value={searchCriteria.region}
               onChange={(e) => setSearchCriteria({ ...searchCriteria, region: e.target.value })}
             >
@@ -84,7 +84,7 @@ const Home = () => {
           </div>
           <div className=' flex flex-col justify-center items-center p-2 w-full m-2 '>
             <label className=' text-xl font-bold text-center'>Profession</label>
-            <select className=' ease-out duration-300 bg-slate-600 p-2  font-bold text-white w-9/12 rounded-md'
+            <select className=' ease-out duration-300 bg-slate-600 p-2  font-bold text-white w-9/12 rounded-md focus:bg-slate-300  '
               value={searchCriteria.profession}
               onChange={(e) => setSearchCriteria({ ...searchCriteria, profession: e.target.value })}
             >
@@ -104,7 +104,9 @@ const Home = () => {
         <h1 className=' text-2xl font-bold text-center'>Search Results</h1>
         {isLoading && <p>Loading...</p>}
         {searchResults.map((company) => (
+          <div className=' flex flex-wrap justify-center items-center p-2 bg-teal-100 rounded-md max-w-4xl m-4'>
           <Card key={company.id} company={company} />
+          </div>
         ))}
       </section>
       
@@ -114,11 +116,12 @@ const Home = () => {
 
 const Card = ({ company }) => {
   return (
-    <div className=' flex flex-col justify-center items-center p-2 bg-slate-200 rounded-md w-full m-4'>
-      <h2 className=' text-xl  '>{company.company_name}</h2>
-      <p className=' text-lg  '>{company.description}</p>
-      <p className=' text-lg  '>{company.region_name}</p>
-      <p className=' text-lg '>{company.profession_name}</p>
+    <div className=' flex flex-col justify-start items-center p-2 bg-slate-200 rounded-md max-w-4xl m-4'>
+      <h2 className=' text-xl  '> Name : {company.company_name}</h2>
+      <p className=' text-lg  '>Description :{company.description}</p>
+      <p className=' text-lg  '> Region : {company.region_name}</p>
+      <p className=' text-lg '>Profession : {company.profession_name}</p>
+      <p><a href ={` https://www.google.com/search?q=${result.company_name}+${result.region_name}+Uganda`}>Google</a></p>
     </div>
   )
 }
