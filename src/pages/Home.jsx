@@ -121,7 +121,7 @@ const Card = ({ company }) => {
       <p className=' text-lg  '>Description :{company.description}</p>
       <p className=' text-lg  '> Region : {company.region_name}</p>
       <p className=' text-lg '>Profession : {company.profession_name}</p>
-      <p><a href ={` https://www.google.com/search?q=${result.company_name}+${result.region_name}+Uganda`}>Google</a></p>
+      <p><a href ={` https://www.google.com/search?q=${company.company_name}+${company.region_name}+Uganda`}>Google</a></p>
     </div>
   )
 }
