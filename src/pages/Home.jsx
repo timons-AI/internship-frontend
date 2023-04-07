@@ -98,20 +98,13 @@ const Home = () => {
           </div>
           <button className=' ease-out duration-300 hover:bg-gray-950 active:bg-white active:text-black bg-slate-600 p-2 font-bold text-white w-50 rounded-md' onClick={handleSearch}>Search</button>
         </div>
-
         </section>
 
       <section className=' flex flex-col justify-center items-center p-2'>
         <h1 className=' text-2xl font-bold text-center'>Search Results</h1>
         {isLoading && <p>Loading...</p>}
         {searchResults.map((company) => (
-          <div key={company.id} className=' flex flex-col justify-center items-center p-2'>
-            <h2 className=' text-xl font-bold text-center'>{company.name}</h2>
-            <p className=' text-lg font-bold text-center'>{company.description}</p>
-            <p className=' text-lg font-bold text-center'>{company.region}</p>
-            <p className=' text-lg font-bold text-center'>{company.profession}</p>
-            <p className=' text-lg font-bold text-center'>{company.contact}</p>
-          </div>
+          <Card key={company.id} company={company} />
         ))}
       </section>
       
@@ -119,4 +112,14 @@ const Home = () => {
   )
 }
 
+const Card = ({ company }) => {
+  return (
+    <div className=' flex flex-col justify-center items-center p-2'>
+      <h2 className=' text-xl font-bold text-center'>{company.company_name}</h2>
+      <p className=' text-lg font-bold text-center'>{company.description}</p>
+      <p className=' text-lg font-bold text-center'>{company.region_name}</p>
+      <p className=' text-lg font-bold text-center'>{company.profession_name}</p>
+    </div>
+  )
+}
 export default Home
