@@ -10,6 +10,7 @@ import About from './pages/About';
 import './App.css'
 import {BsFillMoonStarsFill} from 'react-icons/bs'
 import {AiFillGithub, AiFillLinkedin, AiFillTwitterCircle, AiFillMediumCircle} from 'react-icons/ai'
+import {FaEnvelope, FaPhone, FaMapMarker} from 'react-icons/fa'
 
 
 function App() {
