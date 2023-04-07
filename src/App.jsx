@@ -52,8 +52,13 @@ function App() {
           <AiFillLinkedin />
           <AiFillTwitterCircle />
           <AiFillMediumCircle />
+          <div className='flex justify-center gap-4'>
+  <a href='mailto:info@standardintern.com'><FaEnvelope /> info@standardintern.com</a>
+  <a href='tel:+1234567890'><FaPhone /> +1 (234) 567-890</a>
+  <a href='#'><FaMapMarker /> 123 Main Street, Anytown, USA</a>
+</div>
         </div>
-        {/* copyright */}
+        {/* copyright */} 
         <div className=' flex justify-center gap-16 text-gray-600 '>
           <p>© Standard Intern International</p>
         </div>
