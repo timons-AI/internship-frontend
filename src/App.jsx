@@ -32,7 +32,7 @@ function App() {
 
       </header>
 
-      <main className=' bg-white px-2 '>
+      <main className=' px-2 '>
         <section className=' min-h-screen'>
           <Routes>
             <Route path='/' element={<Home />} />
