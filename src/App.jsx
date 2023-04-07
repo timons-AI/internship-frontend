@@ -55,8 +55,6 @@ function App() {
         </div>
         {/* copyright */}
         <div className=' flex justify-center gap-16 text-gray-600 '>
-          <p>This is a test</p>
-          <br/>
           <p>© Standard Intern International</p>
         </div>
 
