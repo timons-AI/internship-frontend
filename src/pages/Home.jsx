@@ -66,7 +66,7 @@ const Home = () => {
     <div>
       <section className=' flex flex-col justify-center items-center p-2'>
         <h1 className=' text-2xl font-bold text-center'>Find an internship</h1>
-        <div className=' flex flex-col justify-center items-center p-2'>
+        <div className=' flex flex-col justify-center items-center p-2 bg-slate-100 w-full'>
           <div className=' flex flex-col justify-center items-center p-2'>
             <label className=' text-xl font-bold text-center'>Region</label>
             <select
@@ -114,7 +114,7 @@ const Home = () => {
 
 const Card = ({ company }) => {
   return (
-    <div className=' flex flex-col justify-center items-center p-2 bg-slate-200 rounded-md'>
+    <div className=' flex flex-col justify-center items-center p-2 bg-slate-200 rounded-md w-full m-4'>
       <h2 className=' text-xl  '>{company.company_name}</h2>
       <p className=' text-lg  '>{company.description}</p>
       <p className=' text-lg  '>{company.region_name}</p>
