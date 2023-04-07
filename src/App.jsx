@@ -55,7 +55,7 @@ function App() {
         </div>
         {/* copyright */}
         <div className=' flex justify-center gap-16 text-gray-600 '>
-          <p>© 2023 Timothy Ntambi</p>
+          <p>© Standard Intern International</p>
         </div>
 
         
