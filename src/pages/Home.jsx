@@ -42,7 +42,7 @@ const Home = () => {
       } catch (error) {
         setError(error.message);
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
     };
 
@@ -55,7 +55,7 @@ const Home = () => {
       } catch (error) {
         setError(error.message);
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
     };
 
@@ -103,11 +103,11 @@ const Home = () => {
       <section className=' flex flex-col justify-center items-center p-2'>
         <h1 className=' text-2xl font-bold text-center'>Search Results</h1>
         {isLoading && <p>Loading...</p>}
+        < div className=' flex flex-col justify-center items-center p-2 bg-slate-100 w-full rounded-md'>
         {searchResults.map((company) => (
-          <div className=' flex flex-wrap justify-center items-center p-2 bg-teal-100 rounded-md max-w-4xl m-4'>
           <Card key={company.id} company={company} />
-          </div>
         ))}
+        </div>
       </section>
       
     </div>
@@ -116,7 +116,7 @@ const Home = () => {
 
 const Card = ({ company }) => {
   return (
-    <div className=' flex flex-col justify-start items-center p-2 bg-slate-200 rounded-md max-w-4xl m-4'>
+    <div className=' flex flex-col justify-start items-center p-2 bg-slate-200 rounded-md md:w-full w-1/2 m-4'>
       <h2 className=' text-xl  '> Name : {company.company_name}</h2>
       <p className=' text-lg  '>Description :{company.description}</p>
       <p className=' text-lg  '> Region : {company.region_name}</p>
