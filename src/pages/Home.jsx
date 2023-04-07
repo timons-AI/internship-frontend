@@ -116,7 +116,7 @@ const Home = () => {
 
 const Card = ({ company }) => {
   return (
-    <div className=' flex flex-col justify-start items-center p-2 bg-slate-200 rounded-md md:w-full w-1/2 m-4'>
+    <div className=' flex flex-col justify-start items-center p-2 bg-slate-200 rounded-md md:w-full lg:w-1/3  m-4'>
       <h2 className=' text-xl  '> Name : {company.company_name}</h2>
       <p className=' text-lg  '>Description :{company.description}</p>
       <p className=' text-lg  '> Region : {company.region_name}</p>
