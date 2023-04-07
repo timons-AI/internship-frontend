@@ -1,81 +1,68 @@
-import React from 'react'
-import {useEffect, useState} from 'react'
-import Addinfo from "./pages/Addinfo";
-import About from "./pages/About";
-import Home from "./pages/Home";
-import LoginPage from './pages/LoginPage';
-import { Routes, Route } from 'react-router-dom';
-import {motion} from "framer-motion";
-
+import { useState } from 'react'
+import RaP from './components/RaP'
+import Companies from './components/Companies'
+import { useAuth0 } from '@auth0/auth0-react';
+import {Routes, Route} from 'react-router-dom'
+import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
+import Blog from './pages/Blog';
+import About from './pages/About';
 import './App.css'
-import AddInfo from './pages/Addinfo';
+import {BsFillMoonStarsFill} from 'react-icons/bs'
+import {AiFillGithub, AiFillLinkedin, AiFillTwitterCircle, AiFillMediumCircle} from 'react-icons/ai'
+
 
 function App() {
-  const pageVariants = {
-    initial: {
-      opacity: 0,
-      
-    },
-    in: {
-      opacity: 1,
-      x: 0
-    },
-    out: {
-      opacity: 0,
-      
-    }
-  };
-
-  const pageTransition = {
-    type: "tween",
-    ease: "anticipate",
-    duration: 0.5
-  };
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
 
   return (
-    <div className="App">
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/About">About</a>
-          </li>
-          {/* <li>
-            <a href="/Addinfo">DashBoard</a>
-          </li> */}
-          <li>
-            <a href="/Login">Login</a>
-          </li>
+    <div>
+      <header className=' bg-slate-50 p-2'>
+        <nav className=' flex justify-between items-center'>
+         
+            <h1 className=' text-2xl font-bold'>Standard Intern</h1>
+            <div className=' flex gap-4'>
+              <a href='/'>Home</a>
+              
+              <a href='/blog'>Blog</a>
+              <a href='/about'>About</a>
+            </div>
+          
+        </nav>
 
-        </ul>
-      </nav>
-      <main>
-      <motion.div
-          className="route-wrapper"
-          initial="initial"
-          animate="in"
-          exit="out"
-          variants={pageVariants}
-          transition={pageTransition}
-        >
-      <Routes>
-        <Route path="/" element={<Home/> }/>
-        <Route path="/About" element={<About/> }/>
-        <Route path="/Addinfo" element={<Addinfo/> }/>
-        <Route path="/Login" element={<LoginPage/> }/>
-        <Route path="*" element={<h1>404: Not Found</h1>} />
-      </Routes>
-      </motion.div>
+      </header>
+
+      <main className=' bg-white px-2 '>
+        <section className=' min-h-screen'>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/blog' element={<Blog />} />
+            <Route path='/about' element={<About />} />
+          </Routes>
+
+
+        </section>
+
       </main>
-      <footer>
-        <p>© Some guys in Cocis 2023</p>
+
+      <footer className=' bg-slate-50 p-2'>
+        <div className=' flex justify-center gap-16 text-gray-600 '>
+          <AiFillGithub />
+          <AiFillLinkedin />
+          <AiFillTwitterCircle />
+          <AiFillMediumCircle />
+        </div>
+        {/* copyright */}
+        <div className=' flex justify-center gap-16 text-gray-600 '>
+          <p>© 2023 Timothy Ntambi</p>
+        </div>
+
+        
       </footer>
-      
+     
     </div>
-  );
+  )
 }
-
-
-export default App;
+  
+export default App

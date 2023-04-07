@@ -1,45 +1,7 @@
 import React from 'react'
-import {useEffect, useState} from 'react'
-import {motion} from "framer-motion";
-import { Link } from 'react-router-dom';
-import './Home.css'
+import { useState, useEffect } from 'react'
 
-import { useAuth0 } from '@auth0/auth0-react';
-import LoginPage from './LoginPage';
-
-function Home() {
-  const { isAuthenticated } = useAuth0();
-  const pageVariants = {
-    initial: {
-      opacity: 0,
-    },
-    in: {
-      opacity: 1,
-      x: "0"
-    },
-    out: {
-      opacity: 0,
-
-    } ,
-
-    exit: {
-      opacity: 0,
-      x: "100vw",
-      transition: { ease: "easeInOut" }
-    }
-  };
-
-  const pageTransition = {
-    // type: "tween",
-    type: "spring",
-    ease: "anticipate",
-    duration: 0.5,
-    delay: 0.5,
-
-  };
-
-
-
+const Home = () => {
   const [searchCriteria, setSearchCriteria] = useState({ region: '', profession: '' });
 
   const [searchResults, setSearchResults] = useState([]);
@@ -100,114 +62,60 @@ function Home() {
     fetchRegions();
     fetchProfessions();
   }, []);
-
-  
   return (
-    <div className="App">   
-    {
-      isAuthenticated &&
-      <div>
-        <Link to="/Addinfo">
-          <button>Dashboard</button>
-        </Link>
-      </div> 
-    }  
-      <main>
-      <div className="search-box">
-              {/* <input
-            type="text"
-            placeholder="Enter a region"
-            value={searchCriteria.region}
-            onChange={(e) =>
-              setSearchCriteria({
-                ...searchCriteria,
-                region: e.target.value,
-              })
-            }
-          />
-          <input
-            type="text"
-            placeholder="Enter a profession"
-            value={searchCriteria.profession}
-            onChange={(e) =>
-              setSearchCriteria({
-                ...searchCriteria,
-                profession: e.target.value,
-              })
-            }
-          /> */}
-
-          <select
-            value={searchCriteria.region}
-            onChange={(e) =>
-              setSearchCriteria({
-                ...searchCriteria,
-                region: e.target.value,
-              })
-            }>
-            <option value="">Select a region</option>
-            {regions.map((region, index) => (
-              <option key={region.region_id} value={region.name}>
-                {region.name}
-              </option>
-            ))}
-          </select>
-
-          <select 
-
-            value={searchCriteria.profession}
-            onChange={(e) =>
-              setSearchCriteria({
-                ...searchCriteria,
-                profession: e.target.value,
-              })
-            }
-          >
-            <option value="">Select a profession</option>
-            {professions.map((profession, index) => (
-              <option key={profession.profession_id} value={profession.name}>
-                {profession.name}
-              </option>
-            ))}
-          </select>
-          <button onClick={handleSearch}>Search</button>
-      </div>
-        <div className="search-results">
-          { isLoading ? <p>Loading...</p> // Conditionally render loading spinner 
-          :  searchResults ? 
-          <motion.div
-          className="cards"
-          initial="initial"
-          animate="in"
-          exit="out"
-          variants={pageVariants}
-          transition={pageTransition}
-        >
-            {searchResults.map((result, index) => {
-              // return <Card key={index} result={result} />
-              return <Card key={index} result={result} />
-            } )}
-            </motion.div>
-            : <p>No results</p>
-          }
+    <div>
+      <section className=' flex flex-col justify-center items-center p-2'>
+        <h1 className=' text-2xl font-bold text-center'>Find an internship</h1>
+        <div className=' flex flex-col justify-center items-center p-2'>
+          <div className=' flex flex-col justify-center items-center p-2'>
+            <label className=' text-xl font-bold text-center'>Region</label>
+            <select
+              className=' ease-out duration-300 hover:bg-gray-950 active:bg-white active:text-black bg-slate-600 p-2 font-bold text-white w-50 rounded-md'
+              value={searchCriteria.region}
+              onChange={(e) => setSearchCriteria({ ...searchCriteria, region: e.target.value })}
+            >
+              <option value=''>All</option>
+              {regions.map((region) => (
+                <option key={region.id} value={region.id}>
+                  {region.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className=' flex flex-col justify-center items-center p-2'>
+            <label className=' text-xl font-bold text-center'>Profession</label>
+            <select className=' ease-out duration-300 hover:bg-gray-950 active:bg-white active:text-black bg-slate-600 p-2 font-bold text-white w-50 rounded-md'
+              value={searchCriteria.profession}
+              onChange={(e) => setSearchCriteria({ ...searchCriteria, profession: e.target.value })}
+            >
+              <option value=''>All</option>
+              {professions.map((profession) => (
+                <option key={profession.id} value={profession.id}>
+                  {profession.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <button className=' ease-out duration-300 hover:bg-gray-950 active:bg-white active:text-black bg-slate-600 p-2 font-bold text-white w-50 rounded-md' onClick={handleSearch}>Search</button>
         </div>
 
-      </main>
+        </section>
 
-    
-
+      <section className=' flex flex-col justify-center items-center p-2'>
+        <h1 className=' text-2xl font-bold text-center'>Search Results</h1>
+        {isLoading && <p>Loading...</p>}
+        {searchResults.map((company) => (
+          <div key={company.id} className=' flex flex-col justify-center items-center p-2'>
+            <h2 className=' text-xl font-bold text-center'>{company.name}</h2>
+            <p className=' text-lg font-bold text-center'>{company.description}</p>
+            <p className=' text-lg font-bold text-center'>{company.region}</p>
+            <p className=' text-lg font-bold text-center'>{company.profession}</p>
+            <p className=' text-lg font-bold text-center'>{company.contact}</p>
+          </div>
+        ))}
+      </section>
+      
     </div>
-  )
-}
-
-const Card = ({result}) => {
-  return (
-    <div className="card">
-      <p>Name :  {result.company_name}</p>
-      <p>Region: {result.region_name}</p>
-      <p>Professions: {result.profession_name}</p>
-      <p><a href ={` https://www.google.com/search?q=${result.company_name}+${result.region_name}+Uganda`}>Google</a></p>
-     </div>
   )
 }
 
