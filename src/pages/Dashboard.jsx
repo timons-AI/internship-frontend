@@ -9,7 +9,7 @@ const Dashboard = () => {
   
   return (
     <div>
-        <div className=' flex justify-between items-center p-2'>
+        <div className=' flex justify-between items-center p-2 flex-col'>
           <button className=' ease-out duration-300 hover:bg-gray-950 active:bg-white active:text-black bg-slate-600 p-2 font-bold text-white w-50 rounded-md' onClick={() => loginWithRedirect()}>Login</button>
           <button className=' ease-out duration-300 hover:bg-gray-950 active:bg-white active:text-black bg-slate-600 p-2 font-bold text-white w-50 rounded-md' onClick={() => logout()}>Logout</button>
           {isAuthenticated &&(
