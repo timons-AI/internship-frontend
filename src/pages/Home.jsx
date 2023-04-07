@@ -66,11 +66,11 @@ const Home = () => {
     <div>
       <section className=' flex flex-col justify-center items-center p-2'>
         <h1 className=' text-2xl font-bold text-center'>Find an internship</h1>
-        <div className=' flex flex-col justify-center items-center p-2 bg-slate-100 w-full'>
-          <div className=' flex flex-col justify-center items-center p-2'>
+        <div className=' flex flex-col justify-center items-center p-2 bg-slate-100 w-full rounded-md'>
+          <div className=' flex flex-col justify-center items-center p-2 w-full m-2 '>
             <label className=' text-xl font-bold text-center'>Region</label>
             <select
-              className=' ease-out duration-300 bg-slate-600 p-2 font-bold text-white w-50 rounded-md'
+              className=' ease-out duration-300 bg-slate-600 p-2 font-bold text-white w-9/12 rounded-md'
               value={searchCriteria.region}
               onChange={(e) => setSearchCriteria({ ...searchCriteria, region: e.target.value })}
             >
@@ -84,7 +84,7 @@ const Home = () => {
           </div>
           <div className=' flex flex-col justify-center items-center p-2'>
             <label className=' text-xl font-bold text-center'>Profession</label>
-            <select className=' ease-out duration-300 bg-slate-600 p-2 font-bold text-white w-50 rounded-md'
+            <select className=' ease-out duration-300 bg-slate-600 p-2 font-bold text-white w-9/12 rounded-md'
               value={searchCriteria.profession}
               onChange={(e) => setSearchCriteria({ ...searchCriteria, profession: e.target.value })}
             >
