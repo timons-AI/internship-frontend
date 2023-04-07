@@ -82,9 +82,9 @@ const Home = () => {
               ))}
             </select>
           </div>
-          <div className=' flex flex-col justify-center items-center p-2'>
+          <div className=' flex flex-col justify-center items-center p-2 w-full m-2 '>
             <label className=' text-xl font-bold text-center'>Profession</label>
-            <select className=' ease-out duration-300 bg-slate-600 p-2 font-bold text-white w-9/12 rounded-md'
+            <select className=' ease-out duration-300 bg-slate-600 p-2  font-bold text-white w-9/12 rounded-md'
               value={searchCriteria.profession}
               onChange={(e) => setSearchCriteria({ ...searchCriteria, profession: e.target.value })}
             >
@@ -96,7 +96,7 @@ const Home = () => {
               ))}
             </select>
           </div>
-          <button className=' ease-out duration-300 hover:bg-slate-300 active:bg-white bg-slate-600 p-2 font-bold text-white w-50 rounded-md' onClick={handleSearch}>Search</button>
+          <button className=' ease-out duration-300 hover:bg-slate-300 active:bg-white bg-slate-600 p-2 font-bold text-white w-1/2 rounded-md' onClick={handleSearch}>Search</button>
         </div>
         </section>
 
