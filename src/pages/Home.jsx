@@ -70,7 +70,7 @@ const Home = () => {
           <div className=' flex flex-col justify-center items-center p-2'>
             <label className=' text-xl font-bold text-center'>Region</label>
             <select
-              className=' ease-out duration-300 hover:bg-gray-950 active:bg-white active:text-black bg-slate-600 p-2 font-bold text-white w-50 rounded-md'
+              className=' ease-out duration-300 bg-slate-600 p-2 font-bold text-white w-50 rounded-md'
               value={searchCriteria.region}
               onChange={(e) => setSearchCriteria({ ...searchCriteria, region: e.target.value })}
             >
@@ -84,7 +84,7 @@ const Home = () => {
           </div>
           <div className=' flex flex-col justify-center items-center p-2'>
             <label className=' text-xl font-bold text-center'>Profession</label>
-            <select className=' ease-out duration-300 hover:bg-gray-950 active:bg-white active:text-black bg-slate-600 p-2 font-bold text-white w-50 rounded-md'
+            <select className=' ease-out duration-300 bg-slate-600 p-2 font-bold text-white w-50 rounded-md'
               value={searchCriteria.profession}
               onChange={(e) => setSearchCriteria({ ...searchCriteria, profession: e.target.value })}
             >
@@ -96,7 +96,7 @@ const Home = () => {
               ))}
             </select>
           </div>
-          <button className=' ease-out duration-300 hover:bg-gray-950 active:bg-white active:text-black bg-slate-600 p-2 font-bold text-white w-50 rounded-md' onClick={handleSearch}>Search</button>
+          <button className=' ease-out duration-300 hover:bg-slate-300 active:bg-white bg-slate-600 p-2 font-bold text-white w-50 rounded-md' onClick={handleSearch}>Search</button>
         </div>
         </section>
 
@@ -114,11 +114,11 @@ const Home = () => {
 
 const Card = ({ company }) => {
   return (
-    <div className=' flex flex-col justify-center items-center p-2'>
-      <h2 className=' text-xl font-bold text-center'>{company.company_name}</h2>
-      <p className=' text-lg font-bold text-center'>{company.description}</p>
-      <p className=' text-lg font-bold text-center'>{company.region_name}</p>
-      <p className=' text-lg font-bold text-center'>{company.profession_name}</p>
+    <div className=' flex flex-col justify-center items-center p-2 bg-slate-200 rounded-md'>
+      <h2 className=' text-xl  '>{company.company_name}</h2>
+      <p className=' text-lg  '>{company.description}</p>
+      <p className=' text-lg  '>{company.region_name}</p>
+      <p className=' text-lg '>{company.profession_name}</p>
     </div>
   )
 }
