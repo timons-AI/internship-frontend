@@ -9,6 +9,14 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body{
+  background-image: url('./images/banner-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 ::selection{
   background-color: #000;
   color: #fff;
