@@ -78,23 +78,15 @@ const Companies = () => {
             Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify({
-            "name": company,
+            "name": companyName,
             "address": address,
-            "contact": email + ' '+ phone,
+            "contact": email + phone,
             "description": description,
             "regions": [selectedRegionId],
             "professions": [selectedProfessionId],
           }),
-        }
-        );
-        // clear form
-        setCompany('');
-        setAddress('');
-        setPhone('');
-        setEmail('');
-        setDescription('');
-        setSelectedRegionId('');
-        setSelectedProfessionId('');
+        });
+        
         console.log(response);
         console.log (JSON.stringify({
           "name": companyName,
@@ -104,10 +96,17 @@ const Companies = () => {
           "regions": [selectedRegionId],
           "professions": [selectedProfessionId],
         }));
-        }
+        // clear form
+        setCompany('');
+        setAddress('');
+        setPhone('');
+        setEmail('');
+        setDescription('');
+        setSelectedRegionId('');
+        setSelectedProfessionId('');
+        
 
-
-        catch (error) {
+        }catch (error) {
           
           console.log(error.message);
         }
