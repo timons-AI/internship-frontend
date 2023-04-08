@@ -1,4 +1,4 @@
-import React ,{ useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Companies3 = () => {
@@ -56,14 +56,20 @@ const Companies3 = () => {
     }));
   };
 
-
+  const validateForm = () => {
+    const { name, description, address, contact } = formData;
+    if (!name.trim() || !description.trim() || !address.trim() || !contact.trim()) {
+      setError('Please fill in all the required fields.');
+      return false;
+    }
+    setError('');
+    return true;
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // validate inputs
-    if (!formData.name || !formData.description || !formData.address || !formData.contact) {
-      setError('Please fill in all the required fields.');
+    if (!validateForm()) {
       return;
     }
 
@@ -116,31 +122,28 @@ const Companies3 = () => {
       <label>
         Regions:
         <select multiple name="regions" value={formData.regions} onChange={handleRegionChange}>
-        {regions.map((region) => (
-<option key={region.region_id} value={region.region_id}>
-{region.name}
-</option>
-))}
-</select>
-</label>
-<label>
-Professions:
-<select
-         multiple
-         name="professions"
-         value={formData.professions}
-         onChange={handleProfessionChange}
-       >
-{professions.map((profession) => (
-<option key={profession.profession_id} value={profession.profession_id}>
-{profession.name}
-</option>
-))}
-</select>
-</label>
-<button type="submit">Create Company</button>
-</form>
-);
+          {regions.map((region) => (
+            <option key={region.region_id} value={region.region_id}>
+              {region.name}
+            </option>
+          ))}
+        </select>
+      </label>
+      <label>
+        Professions:
+        <select multiple name="professions" value={formData.professions} onChange={handleProfessionChange}>
+          {professions.map((profession) => (
+            <option key={profession.profession_id} value={profession.profession_id}>
+              {profession.name}
+            </option>
+          ))}
+        </select>
+      </label>
+      <button type="submit">Create Company</button>
+      {error && <div>{error}</div>}
+    </form>
+  );
+  
 }
 
 export default Companies3
