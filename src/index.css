@@ -6,6 +6,8 @@
 *{
  
   box-sizing: border-box;
+  margin: 2em;
+  padding: 2em;
   font-family: 'Poppins', sans-serif;
 }
 
