@@ -33,7 +33,7 @@ select{
   width: 100%;
   margin-bottom: 20px;
 }
-input{
+::-webkit-search-results-button{
   background-color: #fff;
   color: #000;
   border: 10px solid #000;
