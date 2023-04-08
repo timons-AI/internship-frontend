@@ -103,7 +103,7 @@ const Home = () => {
           </select>
         </div>
         <button
-          className=' bg-blue-200 hover:bg-gray-300 px-4 py-2 font-medium text-black w-full md:w-1/2 rounded-md my-2'
+          className=' hover:bg-gray-300 px-4 py-2 font-medium text-white bg-black w-1/2 rounded-md my-2'
           onClick={handleSearch}
         >
           Search
@@ -134,13 +134,14 @@ const Home = () => {
 const Card = ({ company }) => {
   return (
     <div className="flex flex-col p-4 bg-gray-200 rounded-md w-full  lg:w-1/3 m-4">
-      <h2 className="text-xl font-medium"><span>Name </span>: {company.company_name}</h2>
-      <p className="text-lg"><span className=' font-medium '>Description</span>: {company.description}</p>
-      <p className="text-lg"><span className=' font-medium '>Region</span>: {company.region_name}</p>
-      <p className="text-lg"><span className=' font-medium '>Profession</span>: {company.profession_name}</p>
+      <h2 ><span className='font-medium'>Name </span>: {company.company_name}</h2>
+      {/* <p className="text-lg"><span className=' font-medium '>Description</span>: {company.description}</p> */}
+      <p ><span className=' font-medium '>Region</span>: {company.region_name}</p>
+      <p ><span className=' font-medium '>Profession</span>: {company.profession_name}</p>
       <p><a href={`https://www.google.com/search?q=${company.company_name}+${company.region_name}+Uganda`} className="text-blue-500 hover:text-blue-700">Google</a></p>
     </div>
   )
 }
+
 
 export default Home;
