@@ -2,7 +2,7 @@ import React from 'react'
 
 const Blog = () => {
   return (
-    <div>
+    <div style={{color:'white'}}>
     <h1>Welcome to the Standard Intern Blog</h1>
     <p>Our blog is dedicated to providing students and recent graduates with the information and resources they need to succeed in their internships and careers. Whether you're looking for tips on job interviews, advice on how to build your professional network, or insights into industry trends, our blog has got you covered.</p>
 
@@ -17,7 +17,7 @@ const Blog = () => {
         <h3>Preparing for Your Internship: What to Expect</h3>
         <p>Starting a new internship can be nerve-wracking, but with the right preparation, you can hit the ground running. In this post, we'll share some tips on how to prepare for your internship and what you can expect during your first few weeks.</p>
       </div>
-      <div>
+      <div style={{color:'white'}}>
         <h3>The Benefits of Interning at a Startup</h3>
         <p>Interning at a startup can be an exciting and rewarding experience, but it's not for everyone. In this post, we'll explore the unique benefits of interning at a startup and provide tips on how to find the right opportunity.</p>
       </div>
