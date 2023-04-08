@@ -33,15 +33,16 @@ select{
   width: 100%;
   margin-bottom: 20px;
 }
-::-webkit-search-results-button{
-  background-color: #fff;
-  color: #000;
-  border: 10px solid #000;
-  padding: 0px;
-  border-radius: 10px;
-  outline: none;
-  font-size: 16px;
-  font-weight: 500;
+.search-results{
   width: 100%;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+flex-wrap: wrap;
+   margin-top: 2rem;
+  background-color: rgb(228, 228, 228,.3);  
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 1rem;
 }
