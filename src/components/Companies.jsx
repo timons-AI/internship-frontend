@@ -86,6 +86,7 @@ const handleSubmit = async (e) => {
             });
 
             console.log(response);
+            console.log ( "Company Name: " + companyName + " Address: " + address + " Contact: " + email + phone + " Description: " + description + " Region: " + selectedRegionId + " Profession: " + selectedProfessionId)
 
             // clear form
             setCompany('');
