@@ -78,7 +78,7 @@ const Companies = () => {
           body: JSON.stringify({
             "name": company,
             "address": address,
-            "contact": email + phone,
+            "contact": email + ' '+ phone,
             "description": description,
             "regions": [selectedRegionId],
             "professions": [selectedProfessionId],
@@ -93,9 +93,11 @@ const Companies = () => {
         setDescription('');
         setSelectedRegionId('');
         setSelectedProfessionId('');
-    
+        console.log(response);
         }
+
         catch (error) {
+          
           console.log(error.message);
         }
         // refresh page
