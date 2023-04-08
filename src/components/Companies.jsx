@@ -65,6 +65,8 @@ const Companies = () => {
       }
 
       const handleSubmit = async () => {
+        // ask if the user is sure
+        if (window.confirm(`Are you sure you want to add this company?`)) {
         try{
         const token = await getAccessTokenSilently();
         const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/setAll', {
@@ -96,6 +98,7 @@ const Companies = () => {
         catch (error) {
           console.log(error.message);
         }
+      }
       };
     
   return (

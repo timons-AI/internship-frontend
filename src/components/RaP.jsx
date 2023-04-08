@@ -107,6 +107,9 @@ const RaP = () => {
     }
 
     const DeleteRegion = async (id) => {
+          // confirm that the user wants to delete the region
+          if (window.confirm(`Are you sure you want to delete this region?`)) {
+
       try{
       const token = await getAccessTokenSilently();
       const response = await fetch(`https://intern-app-u7zql.ondigitalocean.app/api/regions/${id}`, {
@@ -121,8 +124,11 @@ const RaP = () => {
         console.log(error.message);
       }
     };
+    };
 
     const DeleteProfession = async (id) => {
+          // confirm that the user wants to delete the profession
+          if (window.confirm(`Are you sure you want to delete this profession?`)) {
       try{
       const token = await getAccessTokenSilently();
       const response = await fetch(`https://intern-app-u7zql.ondigitalocean.app/api/professions/${id}`, {
@@ -136,6 +142,7 @@ const RaP = () => {
       }catch (error) {
         console.log(error.message);
       }
+    };
     };
 
     function EditProfession(id){
