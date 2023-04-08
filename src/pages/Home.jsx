@@ -113,7 +113,7 @@ const Home = () => {
 
     <section className="flex flex-col justify-center items-center p-2 ">
   
-  {isLoading && <p>Loading...</p>}
+  {isLoading && <p className=' text-slate-100'>Loading...</p>}
  { searchResults ?
  <>
  <h1 className="text-2xl font-medium text-center text-slate-200  ">Search Results</h1>
