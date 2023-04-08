@@ -134,7 +134,7 @@ const Home = () => {
 
 const Card = ({ company }) => {
   return (
-    <div className="flex flex-col p-4 bg-gray-200 rounded-md w-full  lg:w-1/3 m-4">
+    <div className="flex flex-col p-4 bg-gray-200 rounded-md w-3/4  lg:w-1/3 m-4">
       <h2 ><span className='font-medium'>Name </span>: {company.company_name}</h2>
       {/* <p className="text-lg"><span className=' font-medium '>Description</span>: {company.description}</p> */}
       <p ><span className=' font-medium '>Region</span>: {company.region_name}</p>
