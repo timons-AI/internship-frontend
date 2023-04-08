@@ -109,7 +109,7 @@ const Companies3 = () => {
         Regions:
         <select multiple name="regions" value={formData.regions} onChange={handleRegionChange}>
         {regions.map((region) => (
-<option key={region.id} value={region.id}>
+<option key={region.region_id} value={region.region_id}>
 {region.name}
 </option>
 ))}
@@ -124,7 +124,7 @@ Professions:
          onChange={handleProfessionChange}
        >
 {professions.map((profession) => (
-<option key={profession.id} value={profession.id}>
+<option key={profession.profession_id} value={profession.profession_id}>
 {profession.name}
 </option>
 ))}
