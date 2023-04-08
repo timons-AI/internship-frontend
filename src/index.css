@@ -34,7 +34,7 @@ select{
   width: 100%;
   margin-bottom: 20px;
 }
-.search-results{
+.searchResults{
   width: 300px;
   height: 200px;
   background-color: #fff;
@@ -47,4 +47,14 @@ select{
   align-items: left;
   flex-direction: column;
   transition: all 0.3s ease-in-out;
+}
+.searchResults:hover{
+  transform: scale(1.05);
+}
+.searchResultsContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
