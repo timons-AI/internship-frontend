@@ -8,7 +8,7 @@ const Blog = () => {
 
     <h2>Recent Posts</h2>
 
-    <div style={{display: 'flex', flexDirection: 'column'}}>
+    <div style={{display: 'flex', flexDirection: 'column', color:'white'}}>
       <div style={{marginBottom: '30px'}}>
         <h3>The Importance of Networking for Interns</h3>
         <p>Networking is an essential part of building a successful career, but it can be especially important for interns. In this post, we'll explore why networking matters for interns and provide tips on how to do it effectively.</p>
