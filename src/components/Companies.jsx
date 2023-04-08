@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react';
+import axios from 'axios';
 
 const Companies = () => {
 
@@ -66,56 +67,41 @@ const Companies = () => {
         return <div>{error}</div>;
       }
 
-      const handleSubmit = async (e) => {
-        // ask if the user is sure
-        if (window.confirm(`Are you sure you want to add this company?`)) {
-        try{
-        const token = await getAccessTokenSilently();
-        const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/setAll', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({
-            "name": companyName,
-            "address": address,
-            "contact": email + phone,
-            "description": description,
-            "regions": [selectedRegionId],
-            "professions": [selectedProfessionId],
-          }),
-        });
+const handleSubmit = async (e) => {
+    if (window.confirm(`Are you sure you want to add this company?`)) {
+        try {
+            const token = await getAccessTokenSilently();
+            const response = await axios.post('https://intern-app-u7zql.ondigitalocean.app/api/setAll', {
+                "name": companyName,
+                "address": address,
+                "contact": email + phone,
+                "description": description,
+                "regions": [selectedRegionId],
+                "professions": [selectedProfessionId],
+            }, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                }
+            });
 
-        console.log(response);
-        console.log (JSON.stringify({
-          "name": companyName,
-          "address": address,
-          "contact": email + phone,
-          "description": description,
-          "regions": [selectedRegionId],
-          "professions": [selectedProfessionId],
-        }));
+            console.log(response);
 
-        // clear form
-        setCompany('');
-        setAddress('');
-        setPhone('');
-        setEmail('');
-        setDescription('');
-        setSelectedRegionId('');
-        setSelectedProfessionId('');
-        
+            // clear form
+            setCompany('');
+            setAddress('');
+            setPhone('');
+            setEmail('');
+            setDescription('');
+            setSelectedRegionId('');
+            setSelectedProfessionId('');
 
-        }catch (error) {
-          
-          console.log(error.message);
+        } catch (error) {
+            console.log(error.message);
         }
-        // refresh page
-        // window.location.reload();
-      }
-      };
-    
+    }
+};
+
   return (
     <div className=' flex flex-wrap'>
         
