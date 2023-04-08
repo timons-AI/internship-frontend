@@ -118,7 +118,7 @@ const Home = () => {
  { searchResults ?
  <>
  <h1 className="text-2xl font-medium text-center text-slate-200  ">Search Results</h1>
-  <div className="flex flex-wrap justify-center items-center p-2 bg-gray-100 rounded-md w-full lg:w-80 bg-opacity-20 b  ">
+  <div className="flex flex-wrap justify-center items-center p-2 bg-gray-100 rounded-lg w-full lg:w-90 bg-opacity-20 b  ">
     {searchResults.map((company) => (
       <Card key={company.id} company={company} />
     ))}
