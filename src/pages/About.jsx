@@ -10,14 +10,14 @@ const About = () => {
       <br/><p>Join the thousands of students and recent graduates who have found success with Standard Intern. Start browsing internships today and take the first step towards a successful career.</p>
       <div style={{marginTop: '50px'}}>
         <br/><br/><h2>Why Choose Standard Intern?</h2>
-        <ul>
+        <ol>
           <br/><li>Access to quality internship opportunities</li>
           <li>User-friendly interface for easy navigation</li>
           <li>Partnerships with top companies in various fields</li>
           <li>Personalized recommendations based on your preferences</li>
           <li>Resources and support to help you succeed in your internship</li>
           <li>A community of like-minded students and professionals</li>
-        </ul>
+        </ol>
       </div>
     </div>
   )
