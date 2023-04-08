@@ -17,15 +17,21 @@ const Companies3 = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('https://intern-app-u7zql.ondigitalocean.app/api/regions')
-      .then((res) => res.json())
-      .then((data) => setRegions(data))
-      .catch((err) => console.error(err));
+    const fetchData = async () => {
+      try {
+        const regionsResponse = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/regions');
+        const regionsData = await regionsResponse.json();
+        setRegions(regionsData);
 
-    fetch('https://intern-app-u7zql.ondigitalocean.app/api/professions')
-      .then((res) => res.json())
-      .then((data) => setProfessions(data))
-      .catch((err) => console.error(err));
+        const professionsResponse = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/professions');
+        const professionsData = await professionsResponse.json();
+        setProfessions(professionsData);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchData();
   }, []);
 
   const handleChange = ({ target: { name, value } }) => {
@@ -49,6 +55,8 @@ const Companies3 = () => {
         : [...prevData.professions, value],
     }));
   };
+
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
