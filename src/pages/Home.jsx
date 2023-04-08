@@ -66,6 +66,7 @@ const Home = () => {
   return (
     <div>
     <section className='flex flex-col justify-center items-center px-4 py-2'>
+    <h4 className='text-2xl font-medium text-center text-slate-100'>over 1000+ listings</h4><br/>
       <h1 className='text-2xl font-medium text-center text-slate-100'>Find an internship</h1>
       <div className='flex flex-col justify-center items-center bg-gray-100 bg-opacity-25 p-3 w-full lg:w-1/2 rounded-md'>
         <div className='flex flex-col justify-center items-center my-2 w-full md:w-1/2'>
