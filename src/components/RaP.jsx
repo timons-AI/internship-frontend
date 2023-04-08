@@ -34,6 +34,8 @@ const RaP = () => {
         console.log(error.message);
       }
     }
+      // reload the page to show the updated list of regions
+      window.location.reload();
     };
     
     const handleSubmitProfessions = async () => {
@@ -58,6 +60,8 @@ const RaP = () => {
         console.log(error.message);
       }
     }
+      // reload the page to show the updated list of professions  
+      window.location.reload();
     };
 
     const [regions, setRegions] = useState([]);
@@ -142,7 +146,10 @@ const RaP = () => {
       }catch (error) {
         console.log(error.message);
       }
+      
     };
+      // window.location.reload();
+      window.location.reload();
     };
 
     function EditProfession(id){

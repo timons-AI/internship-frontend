@@ -98,6 +98,8 @@ const Companies = () => {
         catch (error) {
           console.log(error.message);
         }
+        // refresh page
+        window.location.reload();
       }
       };
     
@@ -128,7 +130,9 @@ const Companies = () => {
                 {/* drop down menu for region */}
 
                 <select className=' border-2 border-none outline-none  p-2 rounded-md bg-slate-100' onChange={handleRegionSelect}>
+                    <option value=''>Select a region</option>
                     {regions.map((region) => (
+                        
                         <option key={region.id} value={region.id}>
                         {region.name}
                         </option>
@@ -141,6 +145,7 @@ const Companies = () => {
                 
                 {/* drop down menu for profession */}
                 <select className=' border-2 border-none outline-none  p-2 rounded-md bg-slate-100' onChange={handleProfessionSelect}>
+                    <option value=''>Select a profession</option>
                     {professions.map((profession) => (
                         <option key={profession.id} value={profession.id}>
                         {profession.name}
