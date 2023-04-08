@@ -42,7 +42,7 @@ const RaP = () => {
 
       try{
       const token = await getAccessTokenSilently();
-      const response = await fetch('http://localhost:3000/professions', {
+      const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/professions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ const RaP = () => {
     useEffect(() => {
       const fetchRegions = async () => {
         try {
-          const response = await fetch('http://localhost:3000/regions');
+          const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/regions');
           const data = await response.json();
           setRegions(data.regions);
         
@@ -83,7 +83,7 @@ const RaP = () => {
   
       const fetchProfessions = async () => {
         try {
-          const response = await fetch('http://localhost:3000/professions');
+          const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/professions');
           const data = await response.json();
           setProfessions(data.professions);
         
@@ -109,7 +109,7 @@ const RaP = () => {
     const DeleteRegion = async (id) => {
       try{
       const token = await getAccessTokenSilently();
-      const response = await fetch(`http://localhost:3000/regions/${id}`, {
+      const response = await fetch(`https://intern-app-u7zql.ondigitalocean.app/api/regions/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -125,7 +125,7 @@ const RaP = () => {
     const DeleteProfession = async (id) => {
       try{
       const token = await getAccessTokenSilently();
-      const response = await fetch(`http://localhost:3000/professions/${id}`, {
+      const response = await fetch(`https://intern-app-u7zql.ondigitalocean.app/api/professions/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
