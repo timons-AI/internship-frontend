@@ -2,7 +2,7 @@ import React ,{ useState, useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Companies3 = () => {
-    const { loginWithRedirect, logout, isAuthenticated, getAccessTokenSilently } = useAuth0();
+    const { getAccessTokenSilently } = useAuth0();
     const [formData, setFormData] = useState({
         name: '',
         description: '',
@@ -16,12 +16,12 @@ const Companies3 = () => {
       const [professions, setProfessions] = useState([]);
     
       useEffect(() => {
-        fetch('/api/regions')
+        fetch('https://intern-app-u7zql.ondigitalocean.app/api/regions')
           .then((res) => res.json())
           .then((data) => setRegions(data))
           .catch((err) => console.error(err));
     
-        fetch('/api/professions')
+        fetch('https://intern-app-u7zql.ondigitalocean.app/api/professions')
           .then((res) => res.json())
           .then((data) => setProfessions(data))
           .catch((err) => console.error(err));
@@ -56,7 +56,7 @@ const Companies3 = () => {
         
         event.preventDefault();
         try {
-          const res = await fetch('/api/companies', {
+          const res = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/setAll', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
