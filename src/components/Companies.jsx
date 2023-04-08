@@ -8,13 +8,13 @@ const Companies = () => {
     
     const [regions, setRegions] = useState([]);
     const [professions, setProfessions] = useState([]);
-    const [selectedRegionId, setSelectedRegionId] = useState(null);
-    const [selectedProfessionId, setSelectedProfessionId] = useState(null);
-    const [company, setCompany] = useState(null);
-    const [address, setAddress] = useState(null);
-    const [phone, setPhone] = useState(null);
-    const [email, setEmail] = useState(null);
-    const [description, setDescription] = useState(null);
+    const [selectedRegionId, setSelectedRegionId] = useState('');
+    const [selectedProfessionId, setSelectedProfessionId] = useState('');
+    const [company, setCompany] = useState('');
+    const [address, setAddress] = useState('');
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+    const [description, setDescription] = useState('');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -45,7 +45,6 @@ const Companies = () => {
             const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/professions');
             const data = await response.json();
             setProfessions(data.professions);
-            console.log(data.professions)
           } catch (error) {
             setError(error.message);
           } finally {
@@ -90,8 +89,8 @@ const Companies = () => {
         setPhone('');
         setEmail('');
         setDescription('');
-        setSelectedRegionId(null);
-        setSelectedProfessionId(null);
+        setSelectedRegionId('');
+        setSelectedProfessionId('');
     
         }
         catch (error) {

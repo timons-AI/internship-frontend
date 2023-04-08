@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 
 const Home = () => {
-  const [searchCriteria, setSearchCriteria] = useState({ region: '', profession: '' });
+  const [searchCriteria, setSearchCriteria] = useState({ region_id: '', profession_id: '' });
 
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -10,26 +10,27 @@ const Home = () => {
   const handleSearch = async () => {
     setIsLoading(true);
     let searchParams = '';
-    console.log(searchCriteria)
-    if (searchCriteria.region) {
-      searchParams += `region=${searchCriteria.region}&`;
+    
+    if (searchCriteria.region_id) {
+      searchParams += `region_id=${searchCriteria.region_id}&`;
     }
-    if (searchCriteria.profession) {
-      searchParams += `profession=${searchCriteria.profession}&`;
+    if (searchCriteria.profession_id) {
+      searchParams += `profession_id=${searchCriteria.profession_id}`;
     }
     try {
       const response = await fetch(`https://intern-app-u7zql.ondigitalocean.app/api/setAll?${searchParams}`);
       const data = await response.json();
+      console.log( searchParams)
       setSearchResults(data.companies);
-      // clear searchCriteria
-      setSearchCriteria({ region: '', profession: '' });
     } catch (error) {
       console.log(error);
+      setError(error.message);
     } finally {
       setIsLoading(false);
+      setSearchCriteria({ region_id: '', profession_id: '' });
     }
   };
-
+  
   const [regions, setRegions] = useState([]);
   const [professions, setProfessions] = useState([]);
 
@@ -64,65 +65,82 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <section className=' flex flex-col justify-center items-center p-2'>
-        <h1 className=' text-2xl font-bold text-center '>Find an internship</h1>
-        <div className=' flex flex-col justify-center items-center p-2 bg-slate-100 w-full rounded-md'>
-          <div className=' flex flex-col justify-center items-center p-2 w-full m-2 '>
-            <label className=' text-xl font-bold text-center'>Region</label>
-            <select
-              className=' ease-out duration-300 bg-slate-600 p-2 font-bold text-white w-9/12 rounded-md focus:bg-slate-300'
-              value={searchCriteria.region}
-              onChange={(e) => setSearchCriteria({ ...searchCriteria, region: e.target.value })}
-            >
-              <option value=''>All</option>
-              {regions.map((region) => (
-                <option key={region.id} value={region.id}>
-                  {region.name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className=' flex flex-col justify-center items-center p-2 w-full m-2 '>
-            <label className=' text-xl font-bold text-center'>Profession</label>
-            <select className=' ease-out duration-300 bg-slate-600 p-2  font-bold text-white w-9/12 rounded-md focus:bg-slate-300  '
-              value={searchCriteria.profession}
-              onChange={(e) => setSearchCriteria({ ...searchCriteria, profession: e.target.value })}
-            >
-              <option value=''>All</option>
-              {professions.map((profession) => (
-                <option key={profession.id} value={profession.id}>
-                  {profession.name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <button className=' ease-out duration-300 hover:bg-slate-300 active:bg-white bg-slate-600 p-2 font-bold text-white w-1/2 rounded-md' onClick={handleSearch}>Search</button>
+    <section className='flex flex-col justify-center items-center px-4 py-2'>
+      <h1 className='text-2xl font-medium text-center text-slate-100'>Find an internship</h1>
+      <div className='flex flex-col justify-center items-center bg-gray-100 bg-opacity-25 p-3 w-full lg:w-1/2 rounded-md'>
+        <div className='flex flex-col justify-center items-center my-2 w-full md:w-1/2'>
+          <label className='text-xl font-medium text-slate-200 text-center'>Region</label>
+          <select
+            className='px-4 py-2 font-lignt  w-full rounded-md'
+            value={searchCriteria.region_id}
+            onChange={(e) =>
+              setSearchCriteria({ ...searchCriteria, region_id: e.target.value })
+            }
+          >
+            <option value=''>All</option>
+            {regions.map((region) => (
+              <option key={region.region_id} value={region.region_id}>
+                {region.name}
+              </option>
+            ))}
+          </select>
         </div>
-        </section>
+        <div className='flex flex-col justify-center items-center my-2 w-full md:w-1/2'>
+          <label className='text-xl font-medium text-center text-slate-200 '>Profession</label>
+          <select
+            className='px-4 py-2 font-light  w-full rounded-md'
+            value={searchCriteria.profession_id}
+            onChange={(e) =>
+              setSearchCriteria({ ...searchCriteria, profession_id: e.target.value })
+            }
+          >
+            <option value=''>All</option>
+            {professions.map((profession) => (
+              <option key={profession.profession_id} value={profession.profession_id}>
+                {profession.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <button
+          className=' bg-blue-200 hover:bg-gray-300 px-4 py-2 font-medium text-black w-full md:w-1/2 rounded-md my-2'
+          onClick={handleSearch}
+        >
+          Search
+        </button>
+      </div>
+    </section>
 
-      <section className=' flex flex-col justify-center items-center p-2'>
-        <h1 className=' text-2xl font-bold text-center'>Search Results</h1>
-        {isLoading && <p>Loading...</p>}
-        < div className=' flex flex-col justify-center items-center p-2 bg-slate-100 w-full rounded-md'>
-        {searchResults.map((company) => (
-          <Card key={company.id} company={company} />
-        ))}
-        </div>
-      </section>
-      
+    <section className="flex flex-col justify-center items-center p-2 ">
+  
+  {isLoading && <p>Loading...</p>}
+ { searchResults ?
+ <>
+ <h1 className="text-2xl font-medium text-center text-slate-200  ">Search Results</h1>
+  <div className="flex flex-wrap justify-center items-center p-2 bg-gray-100 rounded-md w-full lg:w-10/12 bg-opacity-20 b  ">
+    {searchResults.map((company) => (
+      <Card key={company.id} company={company} />
+    ))}
+  </div>
+ </> : <p className="text-2xl font-medium text-center text-slate-200  ">No results found</p>
+  }
+</section>
+
     </div>
-  )
-}
+  );
+};
+
 
 const Card = ({ company }) => {
   return (
-    <div className=' flex flex-col justify-start items-center p-2 bg-slate-200 rounded-md md:w-full lg:w-1/3  m-4'>
-      <h2 className=' text-xl  '> Name : {company.company_name}</h2>
-      <p className=' text-lg  '>Description :{company.description}</p>
-      <p className=' text-lg  '> Region : {company.region_name}</p>
-      <p className=' text-lg '>Profession : {company.profession_name}</p>
-      <p><a href ={` https://www.google.com/search?q=${company.company_name}+${company.region_name}+Uganda`}>Google</a></p>
+    <div className="flex flex-col p-4 bg-gray-200 rounded-md w-full  lg:w-1/3 m-4">
+      <h2 className="text-xl font-medium"><span>Name </span>: {company.company_name}</h2>
+      <p className="text-lg"><span className=' font-medium '>Description</span>: {company.description}</p>
+      <p className="text-lg"><span className=' font-medium '>Region</span>: {company.region_name}</p>
+      <p className="text-lg"><span className=' font-medium '>Profession</span>: {company.profession_name}</p>
+      <p><a href={`https://www.google.com/search?q=${company.company_name}+${company.region_name}+Uganda`} className="text-blue-500 hover:text-blue-700">Google</a></p>
     </div>
   )
 }
-export default Home
+
+export default Home;

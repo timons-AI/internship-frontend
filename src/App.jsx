@@ -17,8 +17,8 @@ function App() {
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
 
   return (
-    <div>
-      <header className=' bg-slate-50 p-2'>
+    <div className=' text-base md:text-xs'>
+      <header className=' bg-slate-100 p-2 fixed w-full'>
         <nav className=' flex justify-between items-center'>
          
             <h1 className=' text-2xl font-bold'>Standard Intern</h1>
@@ -33,7 +33,7 @@ function App() {
 
       </header>
 
-      <main className=' px-2 '>
+      <main className=' px-1 py-12'>
         <section className=' min-h-screen'>
           <Routes>
             <Route path='/' element={<Home />} />
@@ -44,18 +44,21 @@ function App() {
         </section>
 
       </main>
-
+      {/* copyright and stuff */}
       <footer className=' bg-slate-50 p-2'>
-         
-            <div className='flex justify-center gap-4'>
-              <a href='mailto:info@standardintern.com'><FaEnvelope /> info@standardintern.com</a>
-              <a href='tel:+1234567890'><FaPhone /> +1 (234) 567-890</a>
-              <a href='#'><FaMapMarker /> 123 Main Street, Anytown, USA</a>
-            </div>
-        
-        {/* copyright */} 
-          <div className=' flex justify-center gap-16 text-gray-600 '>
-            <p>© Standard Intern International</p>
+        <div className=' flex flex-col justify-center items-center'>
+          <div className=' flex gap-4'>
+            <a href='#'><AiFillGithub /></a>
+            <a href='#'><AiFillLinkedin /></a>
+            <a href='#'><AiFillTwitterCircle /></a>
+            <a href='#'><AiFillMediumCircle /></a> 
+              <a href='#'><FaEnvelope /></a>
+            <a href='#'><FaPhone /></a>
+            <a href='#'><FaMapMarker /></a>
+          </div>
+          
+          <p className=' text-xs'>© 2023 Standard Intern. All rights reserved.</p>
+          {/* <p className=' text-xs'>Made with ❤️ by <a href='#'>Standard Intern</a></p> */}
           </div>
       </footer>
 
