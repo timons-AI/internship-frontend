@@ -34,27 +34,4 @@ select{
   width: 100%;
   margin-bottom: 20px;
 }
-.searchResults{
-  width: 300px;
-  height: 200px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  padding: 1rem;
-  margin: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: left;
-  flex-direction: column;
-  transition: all 0.3s ease-in-out;
-}
-.searchResults:hover{
-  transform: scale(1.05);
-}
-.searchResultsContainer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-}
+
