@@ -20,12 +20,14 @@ const Companies = () => {
 
 
     const handleRegionSelect = (event) => {
-        setSelectedRegionId(parseInt(event.target.value));
-      };
-    
-      const handleProfessionSelect = (event) => {
-        setSelectedProfessionId(parseInt(event.target.value));
-      };
+      setSelectedRegionId(event.target.value);
+      // console.log(selectedRegionId)
+    };
+  
+    const handleProfessionSelect = (event) => {
+      setSelectedProfessionId (event.target.value);
+      // console.log(selectedProfessionId)
+    };
     
       useEffect(() => {
         const fetchRegions = async () => {
@@ -64,7 +66,7 @@ const Companies = () => {
         return <div>{error}</div>;
       }
 
-      const handleSubmit = async () => {
+      const handleSubmit = async (e) => {
         // ask if the user is sure
         if (window.confirm(`Are you sure you want to add this company?`)) {
         try{
@@ -94,7 +96,16 @@ const Companies = () => {
         setSelectedRegionId('');
         setSelectedProfessionId('');
         console.log(response);
+        console.log (JSON.stringify({
+          "name": companyName,
+          "address": address,
+          "contact": email + phone,
+          "description": description,
+          "regions": [selectedRegionId],
+          "professions": [selectedProfessionId],
+        }));
         }
+
 
         catch (error) {
           
