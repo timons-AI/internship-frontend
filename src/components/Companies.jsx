@@ -86,7 +86,7 @@ const Companies = () => {
             "professions": [selectedProfessionId],
           }),
         });
-        
+
         console.log(response);
         console.log (JSON.stringify({
           "name": companyName,
@@ -96,6 +96,7 @@ const Companies = () => {
           "regions": [selectedRegionId],
           "professions": [selectedProfessionId],
         }));
+
         // clear form
         setCompany('');
         setAddress('');
@@ -111,7 +112,7 @@ const Companies = () => {
           console.log(error.message);
         }
         // refresh page
-        window.location.reload();
+        // window.location.reload();
       }
       };
     
