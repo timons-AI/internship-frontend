@@ -19,9 +19,9 @@ const Dashboard = () => {
             <>
               <h1 className=' text-2xl font-bold text-center'>Admin Dashboard</h1>   
               <div className=' flex flex-wrap gap-4'>    
-              {/* <Companies />
+              {/* <Companies /> */}
               <EditCompanies />
-              <RaP />    */}
+              <RaP />   
               <Companies3 />
              
               </div>

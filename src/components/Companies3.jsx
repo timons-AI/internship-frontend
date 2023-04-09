@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 
-const Companies3 = () => {
+
+
+const Companiesx = () => {
   const { getAccessTokenSilently } = useAuth0();
   const [formData, setFormData] = useState({
     name: '',
@@ -16,23 +18,56 @@ const Companies3 = () => {
   const [professions, setProfessions] = useState([]);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const regionsResponse = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/regions');
-        const regionsData = await regionsResponse.json();
-        setRegions(regionsData);
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const regionsResponse = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/regions');
+//         const regionsData = await regionsResponse.json();
+//         setRegions(regionsData);
 
-        const professionsResponse = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/professions');
-        const professionsData = await professionsResponse.json();
-        setProfessions(professionsData);
-      } catch (err) {
-        console.error(err);
+//         const professionsResponse = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/professions');
+//         const professionsData = await professionsResponse.json();
+//         setProfessions(professionsData);
+//         console.log(professionsData);
+//         console.log (regionsData);
+//       } catch (err) {
+//         console.error(err);
+//         console.log('Failed to fetch regions and professions.');
+//       }
+//     };
+
+//     fetchData();
+//   }, []);
+
+useEffect(() => {
+    const fetchRegions = async () => {
+      try {
+        const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/regions');
+        const data = await response.json();
+        setRegions(data.regions);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
       }
     };
 
-    fetchData();
+    const fetchProfessions = async () => {
+      try {
+        const response = await fetch('https://intern-app-u7zql.ondigitalocean.app/api/professions');
+        const data = await response.json();
+        setProfessions(data.professions);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRegions();
+    fetchProfessions();
   }, []);
+
 
   const handleChange = ({ target: { name, value } }) => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
@@ -102,26 +137,27 @@ const Companies3 = () => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className=' bg-slate-50 p-3 m-3 flex flex-col rounded-lg gap-2'>
       <label>
         Name:
-        <input type="text" name="name" value={formData.name} onChange={handleChange} />
+        <input type="text" name="name" value={formData.name} onChange={handleChange} className=' bg-slate-200 p-2 rounded-md'/>
       </label>
       <label>
         Description:
-        <textarea name="description" value={formData.description} onChange={handleChange} />
+        <textarea name="description" value={formData.description} onChange={handleChange} className=' bg-slate-200 p-2 rounded-md' />
       </label>
       <label>
         Address:
-        <input type="text" name="address" value={formData.address} onChange={handleChange} />
+        <input type="text" name="address" value={formData.address} onChange={handleChange} className=' bg-slate-200 p-2 rounded-md' />
       </label>
       <label>
         Contact:
-        <input type="text" name="contact" value={formData.contact} onChange={handleChange} />
+        <input type="text" name="contact" value={formData.contact} onChange={handleChange} className=' bg-slate-200 p-2 rounded-md' />
       </label>
       <label>
         Regions:
-        <select multiple name="regions" value={formData.regions} onChange={handleRegionChange}>
+        <select name="regions" value={formData.regions} onChange={handleRegionChange} className=' bg-slate-200 p-2 rounded-md'>
+            <option value="">Select Region</option>
           {regions.map((region) => (
             <option key={region.region_id} value={region.region_id}>
               {region.name}
@@ -131,7 +167,8 @@ const Companies3 = () => {
       </label>
       <label>
         Professions:
-        <select multiple name="professions" value={formData.professions} onChange={handleProfessionChange}>
+        <select  name="professions" value={formData.professions} onChange={handleProfessionChange} className=' bg-slate-200 p-2 rounded-md'>    
+            <option value="">Select Profession</option>
           {professions.map((profession) => (
             <option key={profession.profession_id} value={profession.profession_id}>
               {profession.name}
@@ -139,11 +176,11 @@ const Companies3 = () => {
           ))}
         </select>
       </label>
-      <button type="submit">Create Company</button>
+      <button type="submit" className=' bg-slate-200 p-2 rounded-md'>Create Company</button>
       {error && <div>{error}</div>}
     </form>
   );
   
 }
 
-export default Companies3
+export default Companiesx
