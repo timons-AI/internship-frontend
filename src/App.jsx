@@ -11,13 +11,17 @@ import './App.css'
 import {BsFillMoonStarsFill} from 'react-icons/bs'
 import {AiFillGithub, AiFillLinkedin, AiFillTwitterCircle, AiFillMediumCircle} from 'react-icons/ai'
 import {FaEnvelope, FaPhone, FaMapMarker} from 'react-icons/fa'
-
-
+import preloader from './images/364.gif'
 function App() {
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
+  const [isLoading , setIsLoading] = useState(true)
+  // Simulate loading for 2 seconds
+  setTimeout(() => setIsLoading(false), 3000)
+
 
   return (
     <div className=' text-base md:text-xs'>
+      {isLoading ? <LoadingScreen /> : null}
       <header className=' bg-slate-100 p-2 fixed w-full'>
         <nav className=' flex justify-between items-center'>
          
@@ -65,5 +69,15 @@ function App() {
     </div>
   )
 }
-  
+
+function LoadingScreen() {
+  return (
+    <div className=' flex flex-col justify-center items-center h-screen bg-white fill-slate-50'>
+      <img src={preloader} alt='loading' />
+      <p className=' text-2xl font-bold'>Loading...</p>
+    </div>
+  )
+}
+
+
 export default App
