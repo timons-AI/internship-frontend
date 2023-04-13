@@ -29,7 +29,7 @@ const Home = () => {
       setError(error.message);
     } finally {
       setIsLoading(false);
-      setSearchCriteria({ region_id: '', profession_id: '' });
+      // setSearchCriteria({ region_id: '', profession_id: '' });
     }
   };
   
@@ -145,7 +145,7 @@ const Home = () => {
 </div>
         
         <button
-          className=' focus:bg-gray-300 focus:text-black px-4 py-2 font-medium text-white bg-black w-1/2 rounded-md my-2'
+          className=' active:bg-gray-300 active:text-black px-4 py-2 font-medium text-white bg-black w-1/2 rounded-md my-2'
           onClick={handleSearch}
         >
           Search
