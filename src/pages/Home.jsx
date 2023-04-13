@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import FAQ from '../components/FAQ'
 
 const Home = () => {
   const [searchCriteria, setSearchCriteria] = useState({ region_id: '', profession_id: '' });
@@ -104,7 +105,7 @@ const Home = () => {
           </select>
         </div>
         <button
-          className=' hover:bg-gray-300 px-4 py-2 font-medium text-white bg-black w-1/2 rounded-md my-2'
+          className=' focus:bg-gray-300 focus:text-black px-4 py-2 font-medium text-white bg-black w-1/2 rounded-md my-2'
           onClick={handleSearch}
         >
           Search
@@ -126,6 +127,11 @@ const Home = () => {
  </> : <p className="text-2xl font-medium text-center text-slate-200  ">No results found</p>
   }
 </section>
+
+  <section className="flex flex-col justify-center items-center p-2 ">
+      <FAQ  />
+    
+  </section>
 
     </div>
   );
