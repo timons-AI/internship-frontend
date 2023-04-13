@@ -72,7 +72,7 @@ function App() {
 
 function LoadingScreen() {
   return (
-    <div className=' flex flex-col justify-center items-center h-screen bg-white fill-slate-50'>
+    <div className=' flex flex-col justify-center items-center h-screen bg-white fill-slate-50 w-full fixed z-30 top-0 bottom-0 left-0 right-0'>
       <img src={preloader} alt='loading' />
       <p className=' text-2xl font-bold'>Loading...</p>
     </div>
