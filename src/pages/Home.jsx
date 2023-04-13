@@ -86,7 +86,7 @@ const Home = () => {
             ))}
           </select>
         </div>
-        <div className='flex flex-col justify-center items-center my-2 w-full md:w-1/2'>
+        <div className='flex flex-col justify-center items-center my-2 w-full md:w-1/2 lg:h-1/2'>
           <label className='text-xl font-medium text-center text-slate-200 '>Profession</label>
           <select
             className='px-4 py-2 font-light  w-full rounded-md'
