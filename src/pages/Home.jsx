@@ -128,10 +128,7 @@ const Home = () => {
   }
 </section>
 
-  <section className="flex flex-col justify-center items-center p-2 ">
-      <FAQ  />
-    
-  </section>
+
 
     </div>
   );

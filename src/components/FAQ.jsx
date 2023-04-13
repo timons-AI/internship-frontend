@@ -19,7 +19,7 @@ function FAQ() {
   };
 
   return (
-    <div className=' bg-slate-50 bg-opacity-30  rounded-md m-2 p-1 w-full md:w-1/2 '>
+    <div className=' bg-slate-500  rounded-md m-2 p-1 w-full md:w-1/2 '>
       {faqItems.map((item, index) => (
         <div className=' bg-slate-100 text-black  m-2 p-2 rounded-md' key={index}>
           <div
