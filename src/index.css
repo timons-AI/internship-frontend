@@ -13,7 +13,7 @@
 body{
   background-image: url('./images/banner-bg.jpg');
   background-size: cover;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
 
