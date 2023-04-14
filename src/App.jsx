@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import RaP from './components/RaP'
-import Companies from './components/Companies'
+
 import { useAuth0 } from '@auth0/auth0-react';
 import {Routes, Route} from 'react-router-dom'
 import Home from './pages/Home';
@@ -12,6 +11,7 @@ import {BsFillMoonStarsFill} from 'react-icons/bs'
 import {AiFillGithub, AiFillLinkedin, AiFillTwitterCircle, AiFillMediumCircle} from 'react-icons/ai'
 import {FaEnvelope, FaPhone, FaMapMarker} from 'react-icons/fa'
 import preloader from './images/364.gif'
+import AppBar from './components/AppBar';
 function App() {
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
   const [isLoading , setIsLoading] = useState(true)
@@ -22,19 +22,8 @@ function App() {
   return (
     <div className=' text-base md:text-xs'>
       {isLoading ? <LoadingScreen /> : null}
-      <header className=' bg-slate-100 p-2 fixed w-full'>
-        <nav className=' flex justify-between items-center'>
-         
-            <h1 className=' text-2xl font-bold'>Standard Intern</h1>
-            <div className=' flex gap-4'>
-              <a href='/'>Home</a>
-              
-              <a href='/blog'>Blog</a>
-              <a href='/about'>About</a>
-            </div>
-          
-        </nav>
-
+      <header className='fixed w-full'>
+        <AppBar />
       </header>
 
       <main className=' px-1 py-12'>
