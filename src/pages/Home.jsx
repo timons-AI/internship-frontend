@@ -120,22 +120,22 @@ const Home = () => {
                   setSearchCriteria({ ...searchCriteria, region_id: '' })}}
               />
             </div>
-          ) : <p className='text-slate-500 bg-slate-100 rounded-lg p-1'>All Regions</p>}
+          ) : <p className='text-slate-500 bg-slate-100 rounded-lg p-0.5 text-sm'>All Regions</p>}
           {searchCriteria.profession_id ?(
             <div className='flex gap-2 justify-center items-center bg-slate-100 p-1 rounded-lg'> 
-              <span className='font-medium text-slate-500'>
+              <span className='font-medium text-sm text-slate-500'>
                 {professions.filter(profession => profession.profession_id === parseInt(searchCriteria.profession_id))[0]?.name}
               </span>
               <AiOutlineCloseCircle
-                className='text-xl font-medium text-black '
+                className='text-lg font-medium text-black '
                 onClick={() => setSearchCriteria({ ...searchCriteria, profession_id: '' })}
               />
             </div>
-          ) : <p className='text-slate-500 bg-slate-100 rounded-lg p-1'>All Professions</p>}
+          ) : <p className='text-slate-500 bg-slate-100 rounded-lg p-0.5 text-sm'>All Professions</p>}
         </div>
         {searchCriteria.region_id || searchCriteria.profession_id ? (
           <button
-          className='hover:bg-gray-300 font-medium text-white bg-black rounded-md p-2'
+          className='hover:bg-gray-300 font-medium text-white bg-black rounded-md p-1'
             onClick={() => setSearchCriteria({ region_id: '', profession_id: '' })}
           >
             Clear All

@@ -46,7 +46,7 @@ function App() {
             <a href='#'><AiFillTwitterCircle /></a>
             <a href='#'><AiFillMediumCircle /></a> 
               <a href='#'><FaEnvelope /></a>
-            <a href='#'><FaPhone /></a>
+            <a href='tel:+256708163155'><FaPhone /></a>
             <a href='#'><FaMapMarker /></a>
           </div>
           
