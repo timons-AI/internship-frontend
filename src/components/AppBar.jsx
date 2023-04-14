@@ -3,7 +3,7 @@ import { HiMenu } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import './AppBar.css';
+// import './AppBar.css';
 
 function AppBar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
