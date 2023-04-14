@@ -123,11 +123,11 @@ const Home = () => {
           ) : <p className='text-slate-500 bg-slate-100 rounded-lg p-0.5 text-sm'>All Regions</p>}
           {searchCriteria.profession_id ?(
             <div className='flex gap-2 justify-center items-center bg-slate-100 p-1 rounded-lg'> 
-              <span className='font-medium text-slate-500'>
+              <span className='font-medium text-sm text-slate-500'>
                 {professions.filter(profession => profession.profession_id === parseInt(searchCriteria.profession_id))[0]?.name}
               </span>
               <AiOutlineCloseCircle
-                className='text-xl font-medium text-black '
+                className='text-lg font-medium text-black '
                 onClick={() => setSearchCriteria({ ...searchCriteria, profession_id: '' })}
               />
             </div>
