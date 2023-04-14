@@ -135,7 +135,7 @@ const Home = () => {
         </div>
         {searchCriteria.region_id || searchCriteria.profession_id ? (
           <button
-          className='hover:bg-gray-300 font-medium text-white bg-black rounded-md p-2'
+          className='hover:bg-gray-300 font-medium text-white bg-black rounded-md p-1'
             onClick={() => setSearchCriteria({ region_id: '', profession_id: '' })}
           >
             Clear All
