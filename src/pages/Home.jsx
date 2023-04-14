@@ -120,7 +120,7 @@ const Home = () => {
                   setSearchCriteria({ ...searchCriteria, region_id: '' })}}
               />
             </div>
-          ) : <p className='text-slate-500 bg-slate-100 rounded-lg p-1'>All Regions</p>}
+          ) : <p className='text-slate-500 bg-slate-100 rounded-lg p-0.5 text-sm'>All Regions</p>}
           {searchCriteria.profession_id ?(
             <div className='flex gap-2 justify-center items-center bg-slate-100 p-1 rounded-lg'> 
               <span className='font-medium text-slate-500'>
@@ -131,7 +131,7 @@ const Home = () => {
                 onClick={() => setSearchCriteria({ ...searchCriteria, profession_id: '' })}
               />
             </div>
-          ) : <p className='text-slate-500 bg-slate-100 rounded-lg p-1'>All Professions</p>}
+          ) : <p className='text-slate-500 bg-slate-100 rounded-lg p-0.5 text-sm'>All Professions</p>}
         </div>
         {searchCriteria.region_id || searchCriteria.profession_id ? (
           <button
