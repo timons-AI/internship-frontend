@@ -5,14 +5,7 @@ import { AiOutlineCloseCircle ,AiOutlineArrowUp} from 'react-icons/ai'
 import { HiMenu } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 const Home = () => {
-  const searchResultsRef = useRef(null);
 
-  useEffect(() => {
-    if (searchResultsRef.current) {
-      searchResultsRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [searchResults]);
-  
   const [searchCriteria, setSearchCriteria] = useState({ region_id: '', profession_id: '' });
 
   const [searchResults, setSearchResults] = useState([]);
