@@ -60,6 +60,13 @@ function AppBar() {
         <li className="mx-3">
           <Link to="/blog" className="hover:text-gray-400">Blog</Link>
         </li>
+        <li className="mx-3">
+          <Link to="/contact" className="hover:text-gray-400">Contact</Link>
+        </li>
+        <li className="mx-3">
+          <Link to="/testemonial" className="hover:text-gray-400">Testemonial</Link>
+        </li>
+
       </ul>
       <motion.div
         className="fixed top-0 left-0 w-80 md:w-1/3 h-full bg-gray-900 z-50 md:hidden"
@@ -79,6 +86,8 @@ function AppBar() {
           <Link to="/" className=" w-full text-white text-xl font-bold py-3 hover:text-gray-400">Home</Link>
           <Link to="/about" className="w-full text-white text-xl font-bold py-3 hover:text-gray-400">About</Link>
           <Link to="/blog" className="w-full text-white text-xl font-bold py-3 hover:text-gray-400">Blog</Link>
+          <Link to="/contact" className="w-full text-white text-xl font-bold py-3 hover:text-gray-400">Contact</Link>
+          <Link to="/testemonial" className="w-full text-white text-xl font-bold py-3 hover:text-gray-400">Testemonial</Link>
         </div>
       </motion.div>
       {isDrawerOpen && (

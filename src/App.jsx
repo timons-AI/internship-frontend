@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Blog from './pages/Blog';
 import About from './pages/About';
+import Contact from './pages/Contact';
+import Testemonial from './pages/Testemonial';
 import './App.css'
 import {BsFillMoonStarsFill} from 'react-icons/bs'
 import {AiFillGithub, AiFillLinkedin, AiFillTwitterCircle, AiFillMediumCircle} from 'react-icons/ai'
@@ -33,6 +35,8 @@ function App() {
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/blog' element={<Blog />} />
             <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/testemonial' element={<Testemonial />} />
           </Routes>
         </section>
 
