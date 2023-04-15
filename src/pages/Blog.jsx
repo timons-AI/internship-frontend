@@ -1,43 +1,39 @@
-import React from 'react'
+import React from 'react';
+import FAQ from "../components/FAQ";
 
 const Blog = () => {
   return (
     <div className="bg-white text-black p-3 ">
-    <div>
-    <br/><br/><h1>Welcome to the Standard Intern Blog</h1>
-    <br/><p>Our blog is dedicated to providing students and recent graduates with the information and resources they need to succeed in their internships and careers. Whether you're looking for tips on job interviews, advice on how to build your professional network, or insights into industry trends, our blog has got you covered.</p>
-
-    <br/><br/><h2>Recent Posts</h2>
-
-    <div style={{display: 'flex', flexDirection: 'column', color:'white'}}>
-      <div style={{marginBottom: '30px'}}>
-        <br/><br/><h3>The Importance of Networking for Interns</h3>
-        <br/><p>Networking is an essential part of building a successful career, but it can be especially important for interns. In this post, we'll explore why networking matters for interns and provide tips on how to do it effectively.</p>
+      <div className="container mx-auto">
+        <h1 className="text-4xl font-bold mb-8">About Standard Intern</h1>
+        <p className="text-lg mb-8">
+          At Standard Intern, we believe that every student and recent graduate deserves access to quality internship opportunities that align with their career goals. That's why we created a platform that connects students with top companies in their field, giving them the tools and resources they need to jumpstart their careers.
+        </p>
+        <p className="text-lg mb-8">
+          Our mission is simple: to make the internship search process as easy and stress-free as possible. Our website features a user-friendly interface that allows students to search for internships based on their skills, interests, and location. We partner with various companies and industry leaders to offer internships that provide students with valuable experience and help them build their professional networks.
+        </p>
+        <p className="text-lg mb-8">
+          With Standard Intern, students can browse internship opportunities, apply directly to companies in the future, and receive personalized recommendations based on their preferences. We also provide resources and support to help students prepare for job interviews and succeed in their internships.
+        </p>
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold mb-8">Why Use Standard Intern?</h2>
+          <ul className="list-disc list-inside">
+            <li className="text-lg mb-4">Access to quality internship opportunities</li>
+            <li className="text-lg mb-4">User-friendly interface for easy navigation</li>
+            <li className="text-lg mb-4">Partnerships with top companies in various fields</li>
+            <li className="text-lg mb-4">Personalized recommendations based on your preferences</li>
+            <li className="text-lg mb-4">Resources and support to help you succeed in your internship</li>
+            <li className="text-lg mb-4">A community of like-minded students and professionals</li>
+          </ul>
+        </div>
       </div>
-      <div style={{marginBottom: '30px'}}>
-        <br/><br/><h3>Preparing for Your Internship: What to Expect</h3>
-        <br/><p>Starting a new internship can be nerve-wracking, but with the right preparation, you can hit the ground running. In this post, we'll share some tips on how to prepare for your internship and what you can expect during your first few weeks.</p>
-      </div>
-      <div style={{color:'white'}}>
-        <br/><br/><h3>The Benefits of Interning at a Startup</h3>
-        <br/><p>Interning at a startup can be an exciting and rewarding experience, but it's not for everyone. In this post, we'll explore the unique benefits of interning at a startup and provide tips on how to find the right opportunity.</p>
-      </div>
+      
+      <section className="flex flex-col items-center justify-center">
+        <p className="text-2xl font-bold mb-8">Frequently Asked Questions</p>
+          <FAQ />
+      </section>
+     
     </div>
-
-    <br/><br/><h2>Categories</h2>
-
-    <br/><ul>
-      <li>Interview Tips</li>
-      <li>Career Development</li>
-      <li>Industry Insights</li>
-      <li>Internship Success Stories</li>
-      <li>Company Profiles</li>
-    </ul>
-
-    <br/><br/><h2>Join Our Community</h2>
-    <br/><p>Want to stay up-to-date on the latest internship tips and trends? Join our community and receive our newsletter, featuring exclusive content and opportunities.</p>
-  </div>
-  </div>
 )  
 }
 
