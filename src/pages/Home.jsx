@@ -1,10 +1,21 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect , useRef } from 'react';
 import FAQ from '../components/FAQ'
 import { AiOutlineCloseCircle ,AiOutlineArrowUp} from 'react-icons/ai'
 import { HiMenu } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 const Home = () => {
+
+  // Take the user to the results page when the results are ready 
+  const searchResultsRef = useRef(null);
+
+  useEffect(() => {
+    if (searchResultsRef.current) {
+      searchResultsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [searchResults]);
+  // end of activity 
+
 
   const [searchCriteria, setSearchCriteria] = useState({ region_id: '', profession_id: '' });
 
@@ -155,7 +166,9 @@ const Home = () => {
       </div>
     </section>
 
-    <section className="flex flex-col justify-center items-center p-2 ">
+    <section 
+    ref={searchResultsRef}
+    className="flex flex-col justify-center items-center p-2 ">
   
   {isLoading && <p className=' text-slate-100'>Loading...</p>}
  { searchResults ?
