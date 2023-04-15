@@ -5,7 +5,7 @@ const Blog = () => {
   return (
     <div className="bg-white text-black p-3 ">
       <div className="container mx-auto">
-        <h1 className="text-4xl font-bold mb-8">Standard Intern Blog</h1>
+        <h1 className="text-center font-bold mb-8">Standard Intern Blog</h1>
         <p className="text-lg mb-8">
           At Standard Intern, we believe that every student and recent graduate deserves access to quality internship opportunities that align with their career goals. That's why we created a platform that connects students with top companies in their field, giving them the tools and resources they need to jumpstart their careers.
         </p>
