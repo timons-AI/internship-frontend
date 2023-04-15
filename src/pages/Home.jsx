@@ -201,5 +201,4 @@ const Card = ({ company }) => {
   )
 }
 
-
 export default Home;

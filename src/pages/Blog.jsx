@@ -3,7 +3,7 @@ import FAQ from "../components/FAQ";
 
 const Blog = () => {
   return (
-    <div className="bg-white text-black p-3 ">
+    <div className="bg-white text-black p-3 h-full">
       <div className="container mx-auto">
         <h1 className="text-center font-bold mb-8">Standard Intern Blog</h1>
         <p className="text-lg mb-8">
