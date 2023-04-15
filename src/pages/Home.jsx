@@ -167,6 +167,16 @@ const Home = () => {
  </> : <p className="text-2xl font-medium text-center text-slate-200  ">No results found</p>
   }
 </section>
+
+
+<button
+  className='fixed bottom-4 right-4 p-2 rounded-full bg-gray-700 text-white text-3xl bg-opacity-60 hover:bg-opacity-100'
+  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+>
+  <AiOutlineArrowUp />
+</button>
+
+
     </div>
   );
 };
