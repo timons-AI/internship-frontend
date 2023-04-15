@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const About = () => {
   return (
@@ -30,7 +30,6 @@ Ntambi Timothy is the CTO and cofounder of Standard Intern. He is a highly skill
 <p>
 Looking ahead, we see a future where intern recruitment is more efficient and effective than ever before. We are committed to continuing to improve our platform and services, and to expanding our reach to help companies and interns across the globe. We are also working on several exciting new projects, including a mentorship program and a training program for interns to develop specific skills.
 </p>
-<FAQ />
 </div>
      
     </div>
