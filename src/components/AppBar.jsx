@@ -74,11 +74,11 @@ function AppBar() {
           </button>
         </div>
         <div className="flex flex-col items-start pt-6 px-6">
-          < Link to="/" className='text-white text-3xl font-bold py-3 hover:text-gray-400'
+          < Link to="/" className='w-full text-white text-3xl font-bold py-3 hover:text-gray-400'
           >Standard Intern</Link>
-          <Link to="/" className="text-white text-xl font-bold py-3 hover:text-gray-400">Home</Link>
-          <Link to="/about" className="text-white text-xl font-bold py-3 hover:text-gray-400">About</Link>
-          <Link to="/blog" className="text-white text-xl font-bold py-3 hover:text-gray-400">Blog</Link>
+          <Link to="/" className=" w-full text-white text-xl font-bold py-3 hover:text-gray-400">Home</Link>
+          <Link to="/about" className="w-full text-white text-xl font-bold py-3 hover:text-gray-400">About</Link>
+          <Link to="/blog" className="w-full text-white text-xl font-bold py-3 hover:text-gray-400">Blog</Link>
         </div>
       </motion.div>
       {isDrawerOpen && (
