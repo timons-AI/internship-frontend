@@ -5,6 +5,17 @@ import { AiOutlineCloseCircle ,AiOutlineArrowUp} from 'react-icons/ai'
 import { HiMenu } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 const Home = () => {
+  // ++++++++++++++++++++++++++++++++ //
+  // make the search results scroll to the top of the page
+  const searchResultsRef = useRef(null);
+
+  useEffect(() => {
+    if (searchResultsRef.current) {
+      searchResultsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [searchResults]);
+  // ++++++++++++++++++++++++++++++++ //
+
   const [searchCriteria, setSearchCriteria] = useState({ region_id: '', profession_id: '' });
 
   const [searchResults, setSearchResults] = useState([]);
@@ -154,7 +165,7 @@ const Home = () => {
       </div>
     </section>
 
-    <section className="flex flex-col justify-center items-center p-2 ">
+    <section ref={searchResultsRef} className="flex flex-col justify-center items-center p-2 ">
   
   {isLoading && <p className=' text-slate-100'>Loading...</p>}
  { searchResults ?
