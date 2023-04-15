@@ -58,7 +58,7 @@ function AppBar() {
           <Link to="/about" className="hover:text-gray-400">About</Link>
         </li>
         <li className="mx-3">
-          <Link to="/contact" className="hover:text-gray-400">Contact</Link>
+          <Link to="/blog" className="hover:text-gray-400">Blog</Link>
         </li>
       </ul>
       <motion.div
