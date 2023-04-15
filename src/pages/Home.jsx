@@ -1,11 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { useRef } from 'react';
 import FAQ from '../components/FAQ'
 import { AiOutlineCloseCircle ,AiOutlineArrowUp} from 'react-icons/ai'
 import { HiMenu } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 const Home = () => {
+  const searchResultsRef = useRef(null);
 
+  
   const [searchCriteria, setSearchCriteria] = useState({ region_id: '', profession_id: '' });
 
   const [searchResults, setSearchResults] = useState([]);
@@ -24,8 +27,8 @@ const Home = () => {
     try {
       const response = await fetch(`https://intern-app-u7zql.ondigitalocean.app/api/setAll?${searchParams}`);
       const data = await response.json();
-      console.log( searchParams)
       setSearchResults(data.companies);
+      searchResultsRef.current.scrollIntoView({ behavior: 'smooth' });
     } catch (error) {
       console.log(error);
       setError(error.message);
@@ -161,7 +164,8 @@ const Home = () => {
  { searchResults ?
  <>
  <h1 className="text-2xl font-medium text-center text-slate-200  ">Search Results</h1>
-  <div className="flex flex-wrap justify-center items-center p-2 bg-gray-100 rounded-xl w-full lg:w-1/2 bg-opacity-20 ">
+  <div  ref={searchResultsRef}
+  className="flex flex-wrap justify-center items-center p-2 bg-gray-100 rounded-xl w-full lg:w-1/2 bg-opacity-20 ">
     {searchResults.map((company) => (
       <Card key={company.id} company={company} />
     ))}
