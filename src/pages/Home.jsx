@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect ,useRef} from 'react'
 import FAQ from '../components/FAQ'
 import { AiOutlineCloseCircle ,AiOutlineArrowUp} from 'react-icons/ai'
 import { HiMenu } from 'react-icons/hi'
