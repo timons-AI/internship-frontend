@@ -2,7 +2,8 @@ import React from 'react'
 
 const Blog = () => {
   return (
-    <div style={{color:'white'}}>
+    <div className="bg-white text-black p-3 ">
+    <div>
     <br/><br/><h1>Welcome to the Standard Intern Blog</h1>
     <br/><p>Our blog is dedicated to providing students and recent graduates with the information and resources they need to succeed in their internships and careers. Whether you're looking for tips on job interviews, advice on how to build your professional network, or insights into industry trends, our blog has got you covered.</p>
 
@@ -35,6 +36,7 @@ const Blog = () => {
 
     <br/><br/><h2>Join Our Community</h2>
     <br/><p>Want to stay up-to-date on the latest internship tips and trends? Join our community and receive our newsletter, featuring exclusive content and opportunities.</p>
+  </div>
   </div>
 )  
 }
