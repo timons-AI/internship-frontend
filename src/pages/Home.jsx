@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import FAQ from '../components/FAQ'
-import { AiOutlineCloseCircle } from 'react-icons/ai'
-
+import { AiOutlineCloseCircle ,AiOutlineArrowUp} from 'react-icons/ai'
+import { HiMenu } from 'react-icons/hi'
+import { motion } from 'framer-motion'
 const Home = () => {
   const [searchCriteria, setSearchCriteria] = useState({ region_id: '', profession_id: '' });
 
