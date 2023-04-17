@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Footer from './components/Footer';
 
 import { useAuth0 } from '@auth0/auth0-react';
 import {Routes, Route} from 'react-router-dom'
@@ -42,30 +43,9 @@ function App() {
 
       </main>
       {/* copyright and stuff */}
-      <footer className=' bg-slate-50 p-2'>
-      <footer className = 'flex flex-col justify-center items-center bg-slate-50 p-2'>
-
-<p className=' text-xs text-center'>
-    For all your all questions check the bottom of the <a href = 'https://standardintern.com/blog' className='text-blue-500'>blog page</a>, as we have tried to provide some answers to the most common questions.
-    <a href = 'https://standardintern.com/blog' className='text-blue-500'>Click here</a>
-  </p>
-
-</footer>
-        <div className=' flex flex-col justify-center items-center'>
-          <div className=' flex gap-4'>
-            <a href='#'><AiFillGithub /></a>
-            <a href='#'><AiFillLinkedin /></a>
-            <a href='#'><AiFillTwitterCircle /></a>
-            <a href='#'><AiFillMediumCircle /></a> 
-              <a href='#'><FaEnvelope /></a>
-            <a href='tel:+256708163155'><FaPhone /></a>
-            <a href='#'><FaMapMarker /></a>
-          </div>
-          
-          <p className=' text-xs'>© 2023 Standard Intern. All rights reserved.</p>
-          {/* <p className=' text-xs'>Made with ❤️ by <a href='#'>Standard Intern</a></p> */}
-          </div>
-      </footer>
+      <footer>
+        <Footer/>
+       </footer>
 
     </div>
   )
