@@ -34,7 +34,6 @@ const Footer = () => {
           <a href="https://www.twitter.com/standardintern" className="flex items-center my-3  text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
             <FaTwitter className="text-gray-500 mr-2" />
             Twitter
-
           </a>
           <a href="https://www.instagram.com/standardintern" className="flex items-center my-3  text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
             <FaInstagram className="text-gray-500 mr-2" />
