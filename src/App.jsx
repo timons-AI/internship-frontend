@@ -47,7 +47,7 @@ function App() {
 
 <p className=' text-xs text-center'>
     For all your all questions check the bottom of the <a href = 'https://standardintern.com/blog' className='text-blue-500'>blog page</a>, as we have tried to provide some answers to the most common questions.
-    <a href = 'http://localhost:5173/blog' className='text-blue-500'>Click here</a>
+    <a href = 'https://standardintern.com/blog' className='text-blue-500'>Click here</a>
   </p>
 
 </footer>
