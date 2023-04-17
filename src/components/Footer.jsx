@@ -70,9 +70,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="p-2 text-gray-300 text-center text-sm">
-        <a href="/contact" className="text-gray-500 hover:text-gray-300"> privacy policy  </a>|
-        <a href="/about" className="text-gray-500 hover:text-gray-300"> terms of service</a> | 
-        <a href="/testimonial" className="text-gray-500 hover:text-gray-300"> contact us  </a> |
+        <a href="/legal" className="text-gray-500 hover:text-gray-300"> privacy policy  </a>|
+        <a href="/legal" className="text-gray-500 hover:text-gray-300"> terms of service</a> | 
+        <a href="/contact" className="text-gray-500 hover:text-gray-300"> contact us  </a> |
         <a href="/legal" className="text-gray-500 hover:text-gray-300">  legal  </a>
         
 </div>
