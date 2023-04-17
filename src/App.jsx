@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Footer from './components/Footer';
+import Legal from './Legal';
 
 import { useAuth0 } from '@auth0/auth0-react';
 import {Routes, Route} from 'react-router-dom'
@@ -38,6 +39,7 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/testimonial' element={<Testimonial />} />
+            <Route path='/legal' element={<Legal/>} />
           </Routes>
         </section>
 
@@ -59,6 +61,5 @@ function LoadingScreen() {
     </div>
   )
 }
-
 
 export default App
