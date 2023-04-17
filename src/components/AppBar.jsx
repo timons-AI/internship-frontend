@@ -64,7 +64,7 @@ function AppBar() {
           <Link to="/contact" className="hover:text-gray-400">Contact</Link>
         </li>
         <li className="mx-3">
-          <Link to="/testemonial" className="hover:text-gray-400">Testemonial</Link>
+          <Link to="/testimonial" className="hover:text-gray-400">Testimonial</Link>
         </li>
 
       </ul>
@@ -87,7 +87,7 @@ function AppBar() {
           <Link to="/about" className="w-full text-white text-xl font-bold py-3 hover:text-gray-400">About</Link>
           <Link to="/blog" className="w-full text-white text-xl font-bold py-3 hover:text-gray-400">Blog</Link>
           <Link to="/contact" className="w-full text-white text-xl font-bold py-3 hover:text-gray-400">Contact</Link>
-          <Link to="/testemonial" className="w-full text-white text-xl font-bold py-3 hover:text-gray-400">Testemonial</Link>
+          <Link to="/testimonial" className="w-full text-white text-xl font-bold py-3 hover:text-gray-400">Testimonial</Link>
         </div>
       </motion.div>
       {isDrawerOpen && (
