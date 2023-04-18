@@ -19,6 +19,9 @@ const Testimonial = () => {
 <div className="bg-gray-100 p-4">
 <p className="mb-4">"Finally something i can Use"</p>
 </div>
+<div className="bg-gray-100 p-4">
+<p className="mb-4">"I saw Vivo Energies there, i am going to apply there tomorrow, thanks"</p>
+</div>
 </div>
    </div>
   )
