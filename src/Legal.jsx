@@ -122,7 +122,7 @@ const Legal = () => {
     If you have any questions or concerns about our privacy policy, please
     contact us at{" "}
     <a
-      href="standardintern@gmail.com"
+      href="mailto:standardintern@gmail.com"
       className="text-blue-500 hover:text-blue-700"
     >
       standardintern@gmail.com
