@@ -22,6 +22,36 @@ const Testimonial = () => {
 <div className="bg-gray-100 p-4">
 <p className="mb-4">"I saw Vivo Energies there, i am going to apply there tomorrow, thanks"</p>
 </div>
+<div className="bg-gray-100 p-4">
+<p className="mb-4">"The resources and tips provided on this site were incredibly helpful."</p>
+</div>
+<div className="bg-gray-100 p-4">
+<p className="mb-4">"I appreciate the personalized support and advice from the Standard Intern team."</p>
+</div>
+<div className="bg-gray-100 p-4">
+<p className="mb-4">"Thanks to Standard Intern, I'm gaining valuable experience and building my professional network."</p>
+</div>
+<div className="bg-gray-100 p-4">
+<p className="mb-4">"I found so many great internship opportunities on this site."</p>
+</div>
+<div className="bg-gray-100 p-4">
+<p className="mb-4">"Thanks to Standard Intern, I was able to land my dream internship."</p>
+</div>
+<div className="bg-gray-100 p-4">
+<p className="mb-4">"I found so many great internship opportunities on this site."</p>
+</div>
+<div className="bg-gray-100 p-4">
+<p className="mb-4">"Thanks to Standard Intern, I was able to land my dream internship."</p>
+</div>
+<div className="bg-gray-100 p-4">
+<p className="mb-4">"Standard Intern helped me land my dream internship!"</p>
+</div>
+<div className="bg-gray-100 p-4">
+<p className="mb-4">"The support and resources provided by Standard Intern were invaluable."</p>
+</div>
+<div className="bg-gray-100 p-4">
+<p className="mb-4">"Thanks for this website"</p>
+</div>
 </div>
    </div>
   )
