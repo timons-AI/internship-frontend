@@ -164,7 +164,7 @@ const Home = () => {
   
  { searchResults.length > 0 ?
  <>
- { searchResults && searchResults.length > 0 &&
+ { searchResults &&
  <>
   <h1 className="text-2xl font-medium text-center text-slate-200  ">Search Results</h1>
   <div
