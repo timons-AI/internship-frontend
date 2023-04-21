@@ -30,8 +30,8 @@ function App() {
         <AppBar />
       </header>
 
-      <main className=' px-1 py-12'>
-        <section className=' min-h-screen'>
+      <main className='h-full'>
+        <section >
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/dashboard' element={<Dashboard />} />
