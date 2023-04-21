@@ -162,9 +162,9 @@ const Home = () => {
      className="flex flex-col justify-center items-center p-2 ">
   
   
- { searchResults ?
+ { searchResults.length ?
  <>
- { searchResults &&
+ { searchResults ?
  <>
   <h1 className="text-2xl font-medium text-center text-slate-200  ">Search Results</h1>
   <div
@@ -174,7 +174,8 @@ const Home = () => {
       <Card key={company.id} company={company} />
     ))}
   </div>
-  </>}
+  </>
+  : <p className="text-2xl font-medium text-center text-slate-200  ">No Results Found</p>}
  </> : <p className="text-2xl font-medium text-center text-slate-200  ">Click the search </p>
   }
 </section>
