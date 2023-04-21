@@ -163,7 +163,7 @@ const Home = () => {
   
  <p className="text-2xl font-medium text-center text-slate-200  ">Click the search </p>
  {isLoading && <p className='text-2xl font-medium text-center text-slate-200'>Loading...</p>}
- { searchResults ?
+ { searchResults &&
  <>
   <h1 className="text-2xl font-medium text-center text-slate-200  ">Search Results</h1>
   <div
@@ -174,7 +174,7 @@ const Home = () => {
     ))}
   </div>
   </>
-  : <p className="text-2xl font-medium text-center text-slate-200  ">No Results Found</p>}
+  }
 
 </section>
 
