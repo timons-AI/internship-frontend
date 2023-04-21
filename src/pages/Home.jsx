@@ -162,9 +162,11 @@ const Home = () => {
      className="flex flex-col justify-center items-center p-2 ">
   
   
- { searchResults.length > 0  ?
+ { searchResults.length > 0 ?
  <>
- <h1 className="text-2xl font-medium text-center text-slate-200  ">Search Results</h1>
+ { searchResults && searchResults.length > 0 &&
+ <>
+  <h1 className="text-2xl font-medium text-center text-slate-200  ">Search Results</h1>
   <div
   className="flex flex-wrap justify-center items-center p-2 bg-gray-100 rounded-xl w-full lg:w-1/2 bg-opacity-20 ">
     {isLoading && <p className='text-2xl font-medium text-center text-slate-200'>Loading...</p>}
@@ -172,7 +174,8 @@ const Home = () => {
       <Card key={company.id} company={company} />
     ))}
   </div>
- </> : <p className="text-2xl font-medium text-center text-slate-200  ">No results found</p>
+  </>}
+ </> : <p className="text-2xl font-medium text-center text-slate-200  ">Click the search </p>
   }
 </section>
 
