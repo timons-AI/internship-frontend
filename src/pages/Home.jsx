@@ -11,7 +11,7 @@ const Home = () => {
   
   const [searchCriteria, setSearchCriteria] = useState({ region_id: '', profession_id: '' });
 
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSearch = async () => {
