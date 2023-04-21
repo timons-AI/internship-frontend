@@ -24,14 +24,14 @@ function App() {
 
 
   return (
-    <div className=' text-base md:text-xs'>
+    <div className='  text-base md:text-xs lg:text-base flex flex-col h-full w-full'>
       {isLoading ? <LoadingScreen /> : null}
       <header className='fixed w-full'>
         <AppBar />
       </header>
 
-      <main className='h-full'>
-        <section >
+      <main className=' h-full pt-14'>
+        <section className='h-full '>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/dashboard' element={<Dashboard />} />
@@ -45,7 +45,7 @@ function App() {
 
       </main>
       {/* copyright and stuff */}
-      <footer>
+      <footer >
         <Footer/>
        </footer>
 
