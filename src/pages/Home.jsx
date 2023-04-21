@@ -161,23 +161,21 @@ const Home = () => {
     <section   ref={searchResultsRef}
      className="flex flex-col justify-center items-center p-2 ">
   
-  
- { searchResults.length ?
- <>
+ <p className="text-2xl font-medium text-center text-slate-200  ">Click the search </p>
+ {isLoading && <p className='text-2xl font-medium text-center text-slate-200'>Loading...</p>}
  { searchResults ?
  <>
   <h1 className="text-2xl font-medium text-center text-slate-200  ">Search Results</h1>
   <div
   className="flex flex-wrap justify-center items-center p-2 bg-gray-100 rounded-xl w-full lg:w-1/2 bg-opacity-20 ">
-    {isLoading && <p className='text-2xl font-medium text-center text-slate-200'>Loading...</p>}
+    
     {searchResults.map((company) => (
       <Card key={company.id} company={company} />
     ))}
   </div>
   </>
   : <p className="text-2xl font-medium text-center text-slate-200  ">No Results Found</p>}
- </> : <p className="text-2xl font-medium text-center text-slate-200  ">Click the search </p>
-  }
+
 </section>
 
 
