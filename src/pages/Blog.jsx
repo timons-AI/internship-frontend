@@ -15,6 +15,17 @@ const Blog = () => {
         <p className="mb-8">
           With Standard Intern, students can browse internship opportunities, apply directly to companies in the future, and receive personalized recommendations based on their preferences. We also provide resources and support to help students prepare for job interviews and succeed in their internships.
         </p>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1139075679321892"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-gu-3+1f-3d+2z"
+     data-ad-client="ca-pub-1139075679321892"
+     data-ad-slot="2866824929"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
         <div className="mt-16">
           <h2 className="text-2xl font-bold mb-8">Why Use Standard Intern?</h2>
           <ul className="list-disc list-inside">
