@@ -9,7 +9,7 @@ const Testimonial = () => {
     <span className="text-white">Standard Corporation</span>
   </h1>
 </div>
-
+<br/><br/><br/>
         <h1 className="text-center font-bold mb-8">What People Are Saying About Us</h1>
 
    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

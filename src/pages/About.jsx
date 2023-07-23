@@ -8,7 +8,7 @@ const About = () => {
     <span className="text-white">Standard Corporation</span>
   </h1>
 </div>
-
+<br/><br/><br/>
   <h1 className="text-center font-bold">About Standard Intern</h1>
   <br/><h2 className="mb-4">Our Mission and Values</h2>
 <p>

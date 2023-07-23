@@ -2,7 +2,15 @@ import React from "react";
 
 const Legal = () => {
   return (
-    <div className="py-8 px-4 sm:px-6 lg:px-8 bg-white h-full ">
+    <div className="bg-gradient-to-b from-gray-200 to-gray-100 text-black p-4">
+    
+    <div className="card bg-gradient-diagonal-orange rounded-lg overflow-hidden shadow-lg">
+  <h1 className="text-black text-shadow-md font-bold text-4xl my-2 py-2 px-4 text-center">
+    <span className="text-white">Standard Corporation</span>
+  </h1>
+</div>
+<br/><br/><br/>
+
         <div className="py-8 px-4 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold mb-4">Terms of Service</h1>
       <p className="mb-4">

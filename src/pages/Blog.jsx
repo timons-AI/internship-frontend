@@ -10,7 +10,7 @@ const Blog = () => {
     <span className="text-white">Standard Corporation</span>
   </h1>
 </div>
-
+<br/><br/><br/>
         <h1 className="text-center font-bold mb-8">Standard Intern Blog</h1>
         <p className="mb-8">
           At Standard Intern, we believe that every student and recent graduate deserves access to quality internship opportunities that align with their career goals. That's why we created a platform that connects students with top companies in their field, giving them the tools and resources they need to jumpstart their careers.

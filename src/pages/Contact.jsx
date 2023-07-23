@@ -9,7 +9,7 @@ const Contact = () => {
     <span className="text-white">Standard Corporation</span>
   </h1>
 </div>
-    
+<br/><br/><br/>
       <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
       <div className="flex flex-wrap mb-4">
         <div className="w-full sm:w-1/2 md:w-1/4 px-4 mb-4">
