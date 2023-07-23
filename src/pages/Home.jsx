@@ -72,6 +72,13 @@ const Home = () => {
   }, []);
   return (
     <div>
+      
+         <div className="card bg-gradient-diagonal-orange rounded-lg overflow-hidden shadow-lg">
+  <h1 className="text-black text-shadow-md font-bold text-4xl my-2 py-2 px-4 text-center">
+    <span className="text-white">Standard Corporation</span>
+  </h1>
+</div>
+
     <section className='flex flex-col justify-center items-center px-4 py-2'><br/><br/><br/>
     <h4 className='font-extralight text-center text-slate-100'>OVER 1000+ ACTIVE LISTINGS</h4>
       <h1 className='font-medium text-center text-slate-100 text-2xl'>Find nearby internship places</h1><br/>
