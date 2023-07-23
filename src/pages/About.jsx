@@ -2,8 +2,13 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div className="bg-white text-black p-3 ">
-      <div className="container">
+    <div className="bg-gradient-to-b from-gray-200 to-gray-100 text-black p-4">
+             <div className="card bg-gradient-diagonal-orange rounded-lg overflow-hidden shadow-lg">
+  <h1 className="text-black text-shadow-md font-bold text-4xl my-2 py-2 px-4 text-center">
+    <span className="text-white">Standard Corporation</span>
+  </h1>
+</div>
+
   <h1 className="text-center font-bold">About Standard Intern</h1>
   <br/><h2 className="mb-4">Our Mission and Values</h2>
 <p>
@@ -31,8 +36,6 @@ Ntambi Timothy is the CTO and cofounder of Standard Intern. He is a highly skill
 Looking ahead, we see a future where intern recruitment is more efficient and effective than ever before. We are committed to continuing to improve our platform and services, and to expanding our reach to help companies and interns across the globe. We are also working on several exciting new projects, including a mentorship program and a training program for interns to develop specific skills.
 </p>
 </div>
-     
-    </div>
   );
 };
 
