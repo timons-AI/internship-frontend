@@ -19,13 +19,13 @@ const Blog = () => {
           Our mission is simple: to make the internship search process as easy and stress-free as possible. Our website features a user-friendly interface that allows students to search for internships based on their skills, interests, and location. We partner with various companies and industry leaders to offer internships that provide students with valuable experience and help them build their professional networks.
         </p>
         
-       {/* Add downloadable PDFs */}
+ {/* Add downloadable PDFs */}
 <div className="mt-16">
   <h2 className="text-2xl font-bold mb-8">Internship Report Templates</h2>
   <div className="flex flex-col items-center">
-    <a href="/Internship-Report-Structure.pdf" download className="inline-block px-6 py-3 bg-blue-500 text-white font-bold rounded-md shadow-md hover:bg-blue-600 mb-4">Download Report Structure</a>
-    <a href="/Internship-Report-Template-1.pdf" download className="inline-block px-6 py-3 bg-green-500 text-white font-bold rounded-md shadow-md hover:bg-green-600 mb-4">Download Template 1</a>
-    <a href="/Internship-Report-Template-2.pdf" download className="inline-block px-6 py-3 bg-purple-500 text-white font-bold rounded-md shadow-md hover:bg-purple-600 mb-4">Download Template 2</a>
+    <a href="/Internship-Report-Structure.pdf" download className="inline-block px-6 py-3 bg-blue-500 text-white font-bold rounded-md shadow-md hover:bg-blue-600 mb-4 w-64">Download Report Structure</a>
+    <a href="/Internship-Report-Template-1.pdf" download className="inline-block px-6 py-3 bg-green-500 text-white font-bold rounded-md shadow-md hover:bg-green-600 mb-4 w-64">Download Template 1</a>
+    <a href="/Internship-Report-Template-2.pdf" download className="inline-block px-6 py-3 bg-purple-500 text-white font-bold rounded-md shadow-md hover:bg-purple-600 mb-4 w-64">Download Template 2</a>
   </div>
 </div>
  
